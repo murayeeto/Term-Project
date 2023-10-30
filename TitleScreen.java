@@ -17,7 +17,7 @@ public class TitleScreen extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
-        setBackground("Backgrounds/cityandtown.PNG");
+        setBackground("images/Backgrounds/cityandtown.PNG");
         addObject(new CreditLife(),305,90);
         addObject(new NewGame(),300,175);
         addObject(new Continue(),300,220);
