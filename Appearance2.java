@@ -22,7 +22,7 @@ public class Appearance2 extends CharacterImage
     
     
     public Appearance2(){
-        GreenfootImage image = new GreenfootImage("icons/appear2.jpg");
+        GreenfootImage image = new GreenfootImage("images/icons/appear2.jpg");
         image.scale(30,30);
         setImage(image);
     }
