@@ -21,7 +21,7 @@ public class CreditLife extends Actor
     }
     
     public CreditLife(){
-        setImage("icons/CREDITLIFE.png");
+        setImage("images/icons/CREDITLIFE.png");
         getImage().scale(450,80);
     }
 }
