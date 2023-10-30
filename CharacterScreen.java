@@ -17,6 +17,7 @@ public class CharacterScreen extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
+        setBackground("Backgrounds/citypopup.png");
         addObject(new CreateYourCharacter(),300,40);
         addObject(new CharacterImage(),455,210);
         addObject(new Name(),83,130);
