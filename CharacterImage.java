@@ -19,7 +19,7 @@ public class CharacterImage extends Actor
     }   
     public CharacterImage()
     {
-        GreenfootImage image = (new GreenfootImage("Avatars/Fskin1.png"));
+        GreenfootImage image = (new GreenfootImage("images/Avatars/Fskin1.png"));
         image.scale(216, 200);
         setImage(image);
     }
