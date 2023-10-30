@@ -18,7 +18,7 @@ public class Appearance1 extends CharacterImage
     }
     
     public Appearance1(){
-        GreenfootImage image = new GreenfootImage("appear1.jpg");
+        GreenfootImage image = new GreenfootImage("icons/appear1.jpg");
         image.scale(30,30);
         setImage(image);
     }
