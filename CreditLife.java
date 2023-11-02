@@ -13,7 +13,7 @@ public class CreditLife extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    //The colorful title. Right click > Set Image to change it
+    //The colorful title. 
     
     public void act()
     {

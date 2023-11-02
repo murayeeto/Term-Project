@@ -12,6 +12,9 @@ public class Help extends TitleOptions
      * Act - do whatever the Quit wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    //The text "HELP"
+    
     public void act()
     {
         textEffect("HELP",28);

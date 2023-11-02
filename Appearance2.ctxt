@@ -3,6 +3,7 @@ comment0.target=Appearance2
 comment0.text=\n\ Write\ a\ description\ of\ class\ Appearance2\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\n\ Act\ -\ do\ whatever\ the\ Appearance2\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment2.params=
 comment2.target=Appearance2()
 numComments=3

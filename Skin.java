@@ -12,6 +12,9 @@ public class Skin extends CharacterOptions
      * Act - do whatever the Skin wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    //The text "Skin"
+    
     public void act()
     {
         

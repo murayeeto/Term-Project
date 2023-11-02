@@ -12,12 +12,13 @@ public class CreateYourCharacter extends CharacterOptions
      * Act - do whatever the CreateYourCharacterr wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    //The text "Create Your Character"
+    
     public void act()
     {
         
     }
-    
-    //Adds text "Appearance" w font size 30. Color(0,0,0,0) means transparent background
     
     public CreateYourCharacter()
     {

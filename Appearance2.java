@@ -12,15 +12,16 @@ public class Appearance2 extends CharacterImage
      * Act - do whatever the Appearance2 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    
-    private CharacterImage characterImage;
-    
+
+    //The male gender icon.
+
     public void act()
     {
-    
+        if (Greenfoot.mouseClicked(this)){
+            isAppear1 = false;
+        }
     }
-    
-    
+
     public Appearance2(){
         GreenfootImage image = new GreenfootImage("images/icons/appear2.jpg");
         image.scale(30,30);

@@ -12,6 +12,9 @@ public class NewGame extends TitleOptions
      * Act - do whatever the NewGamee wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    //The text "NEW GAME"
+    
     public void act(){
         textEffect("NEW GAME",30);
         boolean clicked = Greenfoot.mouseClicked(this);

@@ -14,7 +14,7 @@ public class TitleOptions extends Actor
      */
     
     //Makes the text change color when the mouse hovers over it
-    //All the subclasses inherits textEffect
+    //All the subclasses inherits textEffect()
     
     public void textEffect(String text, int size){
         MouseInfo mouse = Greenfoot.getMouseInfo();
@@ -26,7 +26,7 @@ public class TitleOptions extends Actor
         }
     }
     
-    //Getter method for the text color. Changing this will change the color for all text
+    //Getter method for the text color. Changing this will change the color for all text (that use this method).
     
     public static Color getColor(){ 
         return new Color(13,73,96);

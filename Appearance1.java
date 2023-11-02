@@ -12,9 +12,14 @@ public class Appearance1 extends CharacterImage
      * Act - do whatever the Female wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    //The Female gender icon.
+    
     public void act()
     {
-
+        if (Greenfoot.mouseClicked(this)){
+            isAppear1 = true;
+        }
     }
     
     public Appearance1(){

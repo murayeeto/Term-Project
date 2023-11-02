@@ -1,10 +1,10 @@
 #BlueJ class context
-comment0.target=JobInput
+comment0.target=CareerInput
 comment0.text=\n\ Write\ a\ description\ of\ class\ JobInputt\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=void\ act()
 comment2.params=
-comment2.target=JobInput()
+comment2.target=CareerInput()
 comment3.params=
-comment3.target=java.lang.String\ getJob()
+comment3.target=java.lang.String\ getCareer()
 numComments=4

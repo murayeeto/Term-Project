@@ -18,10 +18,18 @@ public class NameInput extends Inputs
     {
         if (Greenfoot.mouseClicked(this)){
             name = Greenfoot.ask("What's your name?");
-            if (name.length()>14){
-                name = name.substring(0,14); //character limit of 14
+            while (valid(name)==false){
+                name = Greenfoot.ask("Please enter a valid name!");
             }
+            name = name.trim();
+            if (name.length()>15){
+                name = name.substring(0,15); //character limit of 14
+            }
+            
             image.clear();
+            
+            //Must redraw the image in case the user types something in more than once.
+            
             image.drawRect(0,0,170,27);
             image.drawImage(new GreenfootImage(name,22, Color.BLACK, new Color(0, 0, 0, 0)),5,3);
             setImage(image);
@@ -29,7 +37,7 @@ public class NameInput extends Inputs
     }
     
     public NameInput(){
-        image = new GreenfootImage(173,30);
+        image = new GreenfootImage(171,30);
         image.drawRect(0,0,170,27);
         setImage(image);
     }

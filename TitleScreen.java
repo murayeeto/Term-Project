@@ -22,7 +22,8 @@ public class TitleScreen extends World
         addObject(new NewGame(),300,175);
         addObject(new Continue(),300,220);
         addObject(new Help(),300,260);
-        //Below is an object for designing the layout
+        
+        //The coordinate object. Remove when its no longer needed.
         addObject(new Coordinate(), 450,300);
     }
 }

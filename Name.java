@@ -12,6 +12,9 @@ public class Name extends CharacterOptions
      * Act - do whatever the Namee wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    //The text "Name"
+    
     public void act()
     {
         
