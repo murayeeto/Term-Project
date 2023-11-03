@@ -28,7 +28,7 @@ public class BackArrow extends CharacterImage
 
     public BackArrow(){
         GreenfootImage arrow = new GreenfootImage("images/icons/arrow.PNG");
-        arrow.scale(130,130);
+        arrow.scale(30,30);
         setImage(arrow);
     }
 }

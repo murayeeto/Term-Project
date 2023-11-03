@@ -25,7 +25,7 @@ public class ForwardArrow extends CharacterImage
 
     public ForwardArrow(){
         GreenfootImage arrow = new GreenfootImage("images/icons/arrow.PNG");
-        arrow.scale(130,130);
+        arrow.scale(30,30);
         arrow.rotate(180);
         setImage(arrow);
     }
