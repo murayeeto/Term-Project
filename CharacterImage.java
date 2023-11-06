@@ -14,13 +14,15 @@ public class CharacterImage extends Actor
      */ 
 
     public static boolean isAppear1;
-    
+
     public static int index = 0;
-    
+
+    private static GreenfootImage image;
+
     //When ForwardArrow() is clicked, skin index += 1 and the CharacterImage() is set to the image at the next index
     //When BackArrow() is clicked, skin index -= 1
-    
-                            //Array index 0                  index 1                  index 2, etc
+
+    //Array index 0                  index 1                  index 2, etc
     String [] fSkin = {"images/Avatars/Fskin1.png","images/Avatars/Fskin2.png","images/Avatars/Fskin3.png",
             "images/Avatars/Fskin4.png","images/Avatars/Fskin5.png"
         };
@@ -33,22 +35,27 @@ public class CharacterImage extends Actor
         //constantly have the image set to skin[index]
         if (isAppear1){ //Female skin
             GreenfootImage image = (new GreenfootImage(fSkin[index]));
-        image.scale(216, 200);
-        setImage(image);
+            image.scale(216, 200);
+            setImage(image);
         }
         if (!isAppear1){ //Male skin
             GreenfootImage image = (new GreenfootImage(mSkin[index]));
-        image.scale(216, 200);
-        setImage(image);
+            image.scale(216, 200);
+            setImage(image);
         }
     }   
 
     public CharacterImage()
     {
         isAppear1 = true;
-        GreenfootImage image = (new GreenfootImage(fSkin[index]));
+        image = (new GreenfootImage(fSkin[index]));
         image.scale(216, 200);
         setImage(image);
 
     }
+
+    public static GreenfootImage getCharacter(){
+        return image;
+    }
+
 }

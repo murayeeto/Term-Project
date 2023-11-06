@@ -42,7 +42,7 @@ public class NameInput extends Inputs
         setImage(image);
     }
     
-    public String getName(){
+    public static String getName(){
         return name;
     }
 }

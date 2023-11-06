@@ -34,7 +34,7 @@ public class CharacterScreen extends World
         addObject(new ForwardArrow(),248,302);
         addObject(new ContinueArrow(),45,365);
         addObject(new PreviousArrow(),545,365);
-        
+        addObject(new Start(),244,350);
         //The coordinate object. Remove when its no longer needed.
         //addObject(new Coordinate(), 300,300); 
     }

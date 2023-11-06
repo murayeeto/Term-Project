@@ -46,7 +46,7 @@ public class CareerInput extends Inputs
         setImage(image);
     }
 
-    public String getCareer(){
+    public static String getCareer(){
         return career;
     }
 }

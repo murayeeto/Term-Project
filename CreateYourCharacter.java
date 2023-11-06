@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class CreateYourCharacter extends CharacterOptions
+public class CreateYourCharacter extends Character
 {
     /**
      * Act - do whatever the CreateYourCharacterr wants to do. This method is called whenever
