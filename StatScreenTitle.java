@@ -15,8 +15,9 @@ public class StatScreenTitle extends Actor
     //createss state screen title 
     public StatScreenTitle()
     {
-        GreenfootImage statTitle = new GreenfootImage("StatTitle.png");
-        statTitle.scale(200,50);
+        GreenfootImage statTitle = new GreenfootImage("images/icons/StatTitle.png");
+        statTitle.scale(150,50);
+        //statTitle.scale(statTitle.getWidth() - 120 ,statTitle.getHeight() - 120);
         setImage(statTitle);
         
     }

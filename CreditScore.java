@@ -24,7 +24,7 @@ public class CreditScore extends Actor
         creditscoreImage = new GreenfootImage(250, 50);
         creditscoreImage.setColor(getColor());
         creditscoreImage.setFont(font);
-        creditscoreImage.drawString("Credit Score: "+scoreNumber, 0, 20);
+        creditscoreImage.drawString("Credit Score: \n      "+scoreNumber, 0, 20);
         setImage(creditscoreImage);
     }
     
@@ -39,9 +39,9 @@ public class CreditScore extends Actor
     public void act()
     {
         //new CreditScore();
-        creditscoreImage.setColor(getColor());
+        creditscoreImage.setColor( getColor() );
         creditscoreImage.clear();
-        creditscoreImage.drawString("Credit Score: "+scoreNumber, 0, 20);
+        creditscoreImage.drawString("Credit Score: \n      "+ scoreNumber, 0, 20);
         setImage(creditscoreImage);
          
     }
@@ -67,7 +67,7 @@ public class CreditScore extends Actor
         this.scoreNumber = this.scoreNumber + amount;
         
         creditscoreImage.clear();
-        creditscoreImage.drawString("Credit Score: $"+ this.scoreNumber, 0, 20);
+        creditscoreImage.drawString("Credit Score: \n      "+ this.scoreNumber, 0, 20);
         setImage(creditscoreImage);
     }
     
@@ -76,7 +76,7 @@ public class CreditScore extends Actor
         this.scoreNumber = this.scoreNumber - amount;
         
         creditscoreImage.clear();
-        creditscoreImage.drawString("Credit Score: $"+ this.scoreNumber, 0, 20);
+        creditscoreImage.drawString("Credit Score: \n      "+ this.scoreNumber, 0, 20);
         setImage(creditscoreImage);
     }
     

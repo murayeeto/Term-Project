@@ -23,9 +23,9 @@ public class BankAccount extends Actor
         balance = 0;
         Font font = new Font(true, false, 20);
         bankaccountImage = new GreenfootImage(250, 50);
-        bankaccountImage.setColor(Color.WHITE);
+        bankaccountImage.setColor(Color.BLACK);
         bankaccountImage.setFont(font);
-        bankaccountImage.drawString("Account Balance: \n$"+balance, 0, 20);
+        bankaccountImage.drawString("Account Balance: \n          $"+balance, 0, 20);
         setImage(bankaccountImage);
     }
 
@@ -33,9 +33,9 @@ public class BankAccount extends Actor
     // updates bank account image
     public void act()
     {
-        bankaccountImage.setColor(Color.WHITE);
+        bankaccountImage.setColor(Color.BLACK);
         bankaccountImage.clear();
-        bankaccountImage.drawString("Account Balance: \n$"+balance, 0, 20);
+        bankaccountImage.drawString("Account Balance: \n          $"+balance, 0, 20);
         setImage(bankaccountImage);   
     }
     
@@ -43,7 +43,7 @@ public class BankAccount extends Actor
         this.balance = this.balance + amount;
         
         bankaccountImage.clear();
-        bankaccountImage.drawString("Account Balance: \n$"+ this.balance, 0, 20);
+        bankaccountImage.drawString("Account Balance: \n          $"+ this.balance, 0, 20);
         setImage(bankaccountImage);
     }
     
@@ -51,7 +51,7 @@ public class BankAccount extends Actor
         this.balance = this.balance - amount;
         
         bankaccountImage.clear();
-        bankaccountImage.drawString("Account Balance: \n$"+ this.balance, 0, 20);
+        bankaccountImage.drawString("Account Balance: \n          $"+ this.balance, 0, 20);
         setImage(bankaccountImage);
     }
 }

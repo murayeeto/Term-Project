@@ -21,18 +21,18 @@ public class Income extends Actor
         income = 0;
         Font font = new Font(true, false, 20);
         incomeImage = new GreenfootImage(250, 50);
-        incomeImage.setColor(Color.WHITE);
+        incomeImage.setColor(Color.BLACK);
         incomeImage.setFont(font);
-        incomeImage.drawString("Income: $"+ income, 0, 20);
+        incomeImage.drawString("Income: \n    $"+ income, 0, 20);
         setImage(incomeImage);
     }
 
     //updates income image
     public void act()
     {
-        incomeImage.setColor(Color.WHITE);
+        incomeImage.setColor(Color.BLACK);
         incomeImage.clear();
-        incomeImage.drawString("Income: $"+ income, 0, 20);
+        incomeImage.drawString("Income: \n    $"+ income, 0, 20);
         setImage(incomeImage); 
     }
     
@@ -40,7 +40,7 @@ public class Income extends Actor
         this.income = this.income + amount;
         
         incomeImage.clear();
-        incomeImage.drawString("Income: $"+ this.income, 0, 20);
+        incomeImage.drawString("Income: \n    $"+ this.income, 0, 20);
         setImage(incomeImage); 
     }
     
@@ -49,7 +49,7 @@ public class Income extends Actor
         this.income = this.income - amount;
         
         incomeImage.clear();
-        incomeImage.drawString("Income: $"+ this.income, 0, 20);
+        incomeImage.drawString("Income: \n    $"+ this.income, 0, 20);
         setImage(incomeImage);
     }
 }

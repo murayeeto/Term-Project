@@ -18,4 +18,12 @@ public class CharacterIcon extends Actor
         setImage(image);
         getImage().scale(50,50);
     }
+    
+    public void act(){
+        boolean clicked = Greenfoot.mouseClicked(this);
+        if (clicked){
+            //Need to change the world to the actual game world
+           Greenfoot.setWorld(new MyWorld());
+        }
+    }
 }
