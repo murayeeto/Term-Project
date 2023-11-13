@@ -15,12 +15,21 @@ public class PhoneScreen extends Actor
      */
     
     public PhoneScreen(){
-       GreenfootImage phone = new GreenfootImage("cityandtown.PNG");
-       phone.scale(210,355);
+       //GreenfootImage phone = new GreenfootImage("images/Backgrounds/phoneimage.png");
+       GreenfootImage phone = new GreenfootImage("images/Backgrounds/phonenobg.png");
+       //phone.scale(210,355);
+       // phone.scale(phone.getWidth() + 500,phone.getHeight() + 500);
+       //phone.setWidth(300);
        setImage(phone);
     }
-    //public void act()
-    //{
-    //  new PhoneScreen();  
-    //}
+    
+    public void act()
+    {
+      //GreenfootImage phone = new GreenfootImage("images/Backgrounds/phoneimage.png");
+      GreenfootImage phone = new GreenfootImage("images/Backgrounds/phonenobg.png");
+       //phone.scale(210,355);
+       phone.scale(phone.getWidth() + 100 ,phone.getHeight() - 40);
+       
+       setImage(phone);  
+    }
 }
