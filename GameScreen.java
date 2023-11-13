@@ -22,6 +22,7 @@ public class GameScreen extends World
         super(600, 400, 1); 
         setBackground("images/Backgrounds/citypopup.png");
         addObject(new CharacterIcon(),25,30);
+        addObject(new MenuIcon(),560,30);
         addObject(new Character(), 590,30);
         if (getPlayer().getMoney() == 0){
             handleMoneyEvent();

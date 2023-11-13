@@ -39,7 +39,7 @@ public class MyWorld extends World
         CreditScore userScore = new CreditScore(); 
         addObject(userScore,370,300);
         
-        ContinueArrow goBack = new ContinueArrow();
+        PreviousArrow goBack = new PreviousArrow();
         goBack.setImage("images/icons/cont_prevArrow.PNG");
         goBack.getImage().scale(80,50);
         addObject(goBack, 50, 50);

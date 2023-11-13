@@ -25,7 +25,7 @@ public class Inputs extends Actor
         //By default, valid = true so the loop will end when valid = false
         
         boolean valid = true;
-        String validChar = " ABCDEFGHIJKLMNOPQRSTUVWXYZ-'";
+        String validChar = " ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         for (int i = 0; i < word.length() && valid==true; i++) {
             String iChar = String.valueOf(word.charAt(i)).toUpperCase();
             if (!validChar.contains(iChar)){ //if the character is not in validChar
