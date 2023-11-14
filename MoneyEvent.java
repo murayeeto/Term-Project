@@ -8,8 +8,28 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MoneyEvent extends Event
 {
-    public MoneyEvent() {
-        super("You invested in some sort of stock +10 Money", 10, 5, 0);
+    public MoneyEvent(int choice) {
+        super("You invested in some sort of stock", 10.00, 0);
+        switch(choice){
+            case 0:
+                setDescription("use getDescription() to retrieve whatevre the constructors message is or just set it to something new with the setter method" + "10.00$"); 
+                break;
+            case 1:
+                setDescription("test 2 " + "+ 15.00$"); 
+                setEventMoney(15.00);
+                break;
+            case 2:
+                setDescription("test 3 " + "+ 30.00$" + "+ 20 to your credit score"); 
+                setEventMoney(30.00);
+                setEventCredit(10);
+                break;
+                
+            case 3:
+                setDescription("HELLO!!!! " + "+ 202103981298309123.00$" + "+ 20 to your credit score"); 
+                setEventMoney(202103981298309123.00);
+                setEventCredit(10);
+                break;
+        }
     }
 
     public void act() {
