@@ -17,7 +17,6 @@ public class Character extends Actor
     private double Money;
     private int StartingCredit = 0;
     private int Credit;
-    private int Happiness;
     // Constructor
     public Character() {
         Age = 18;
@@ -25,7 +24,6 @@ public class Character extends Actor
         Credit = StartingCredit;
         String name = NameInput.getName();
         String career = CareerInput.getCareer();
-        Happiness = 10;
 
     }
     
@@ -42,10 +40,6 @@ public class Character extends Actor
         return Credit;
     }
     
-    public int getHappiness() {
-        return Happiness;
-    }
-    
     //setters
     public void setCredit(int Credit) {
         this.Credit = Credit;
@@ -57,8 +51,5 @@ public class Character extends Actor
     
     public void setAge(int Age) {
         this.Age = Age;
-    }
-    public void setHappiness(int Happiness) {
-        this.Happiness = Happiness;
     }
 }

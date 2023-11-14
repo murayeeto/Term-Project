@@ -24,13 +24,13 @@ public class GameScreen extends World
         addObject(new CharacterIcon(),25,30);
         addObject(new Character(), 590,30);
         if (getPlayer().getMoney() == 0){
-            handleMoneyEvent();
+            handleMoneyEvent(3);
         }
     }
 
     //handlers
-    public void handleMoneyEvent() {
-        MoneyEvent MoneyEvent = new MoneyEvent();
+    public void handleMoneyEvent(int eventnumber) {
+        MoneyEvent MoneyEvent = new MoneyEvent(eventnumber);
         String Description = MoneyEvent.getDescription();
         // Add the Event to the world
         addObject(MoneyEvent, 100, 100);
