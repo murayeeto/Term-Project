@@ -10,7 +10,7 @@ public class BankAccount extends Actor
 {
 
     private GreenfootImage bankaccountImage;
-    private int balance;
+    private static int balance;
     // dont really need number
 
     /**
@@ -29,6 +29,9 @@ public class BankAccount extends Actor
         setImage(bankaccountImage);
     }
 
+    public static void setBalance(int amount){
+        balance = amount;
+    }
     
     // updates bank account image
     public void act()

@@ -22,8 +22,35 @@ public class CareerInput extends Inputs
     public void act()
     {
         if (Greenfoot.mouseClicked(this)){
-            career = Greenfoot.ask("What's your career?");
-            while (valid(career)==false){
+            //career = Greenfoot.ask("What's your career?");
+            career = Greenfoot.ask("Your options are: teacher, nurse, engineer, accountant, architect, lawyer, store manager, or electrician. Choose wisely!");
+            
+            if(getCareer().equals("teacher")){
+            Income.setIncome(66397);
+            }
+            else if(getCareer().equals("electrician")){
+            Income.setIncome(60040);
+            }
+            else if(getCareer().equals("nurse")){
+            Income.setIncome(82750);
+            }
+            else if(getCareer().equals("engineer")){
+            Income.setIncome(99411);
+            }
+            else if(getCareer().equals("accountant")){
+            Income.setIncome(65000);
+            }
+            else if(getCareer().equals("architect")){
+            Income.setIncome(131322);
+            }
+            else if(getCareer().equals("lawyer")){
+            Income.setIncome(127990);
+            }
+            else if(getCareer().equals("store manager")){
+            Income.setIncome(55428);
+            }
+            
+            while ( (valid(career)==false) ){
                 career = Greenfoot.ask("Please enter a career - It can only contain English letters and spaces!");
             }
             career = career.trim();
@@ -37,6 +64,13 @@ public class CareerInput extends Inputs
             image.drawRect(0,0,170,27);
             image.drawImage(new GreenfootImage(career,22, Color.BLACK, new Color(0, 0, 0, 0)),5,3);
             setImage(image);
+        }
+    }
+    
+    public void jobIncome(){
+        if(career == "teacher"){
+            Income income = new Income(500);
+            
         }
     }
 
