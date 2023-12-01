@@ -23,40 +23,52 @@ public class CareerInput extends Inputs
     {
         if (Greenfoot.mouseClicked(this)){
             //career = Greenfoot.ask("What's your career?");
-            career = Greenfoot.ask("Your options are: teacher, nurse, engineer, accountant, architect, lawyer, store manager, or electrician. Choose wisely!");
+            //career = Greenfoot.ask("Your options are: teacher, nurse, engineer, accountant, architect, lawyer, store manager, or electrician. Choose wisely!");
+            career = Greenfoot.ask("Enter a number: 1 = teacher, 2 = nurse, 3 = engineer, 4 = accountant, 5 = architect, 6 = lawyer, 7 = store manager, 8 = electrician. Choose wisely!");
             
-            if(getCareer().equals("teacher")){
+            if(getCareer().equals("1")){
             Income.setIncome(66397);
+            BankAccount.setBalance(19919);
             }
-            else if(getCareer().equals("electrician")){
+            else if(getCareer().equals("8")){
             Income.setIncome(60040);
+            BankAccount.setBalance(18012);
             }
-            else if(getCareer().equals("nurse")){
-            Income.setIncome(82750);
+            else if(getCareer().equals("2")){
+            Income.setIncome(2482);
+            BankAccount.setBalance(24825);
             }
-            else if(getCareer().equals("engineer")){
+            else if(getCareer().equals("3")){
             Income.setIncome(99411);
+            BankAccount.setBalance(29823);
             }
-            else if(getCareer().equals("accountant")){
+            else if(getCareer().equals("4")){
             Income.setIncome(65000);
+            BankAccount.setBalance(19500);
             }
-            else if(getCareer().equals("architect")){
+            else if(getCareer().equals("5")){
             Income.setIncome(131322);
+            BankAccount.setBalance(39396);
             }
-            else if(getCareer().equals("lawyer")){
+            else if(getCareer().equals("6")){
             Income.setIncome(127990);
+            BankAccount.setBalance(38397);
             }
-            else if(getCareer().equals("store manager")){
+            else if(getCareer().equals("7")){
             Income.setIncome(55428);
+            BankAccount.setBalance(16628);
+            }
+            else{
+                career = Greenfoot.ask("Please enter a valid number! You can choose 1 through 8!");
             }
             
-            while ( (valid(career)==false) ){
-                career = Greenfoot.ask("Please enter a career - It can only contain English letters and spaces!");
+            /* while ( (valid(career)==false) ){
+                career = Greenfoot.ask("Please enter one of the numbers given. You can choose 1 through 8!");
             }
             career = career.trim();
             if (career.length()>15){
                 career = career.substring(0,15); //character limit of 15
-            }
+            } */
             image.clear();
             
             //Must redraw the image in case the user types something in more than once.
