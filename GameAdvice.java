@@ -1,0 +1,29 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Write a description of class GameAdvice here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class GameAdvice extends GameSummary
+{
+    /**
+     * Act - do whatever the GameTips wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act()
+    {
+        // Add your action code here.
+    }
+    
+    public GameAdvice(){
+        setImage("images/icons/gameAdvice.png");
+        getImage().scale(525,275);
+    }
+    
+    public int[] getLocation(){
+        int[] location = {getX(),getY()};
+        return location;
+    }
+}

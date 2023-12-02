@@ -32,9 +32,8 @@ public class CharacterScreen extends World
         addObject(new Skin(),180,302);
         addObject(new BackArrow(),115,300);
         addObject(new ForwardArrow(),248,302);
-        addObject(new ContinueArrow(),45,365);
-        addObject(new PreviousArrow(),545,365);
-        addObject(new Start(),244,350);
+        addObject(new ContinueArrow(),545,365);
+        addObject(new PreviousArrow(),45,365);
         //The coordinate object. Remove when its no longer needed.
         //addObject(new Coordinate(), 300,300); 
     }
