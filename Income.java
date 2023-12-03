@@ -10,7 +10,7 @@ public class Income extends Actor
 {
 
     private GreenfootImage incomeImage;
-    private int income;
+    public static int income;
 
     /**
      * Act - do whatever the CreditScore wants to do. This method is called whenever
@@ -18,7 +18,7 @@ public class Income extends Actor
      */
     //creates an income image with an initial value of 0
     public Income(){
-        income = 0;
+        income = this.income;
         Font font = new Font(true, false, 20);
         incomeImage = new GreenfootImage(250, 50);
         incomeImage.setColor(Color.BLACK);
@@ -26,14 +26,28 @@ public class Income extends Actor
         incomeImage.drawString("Income: \n    $"+ income, 0, 20);
         setImage(incomeImage);
     }
-
+    
+    public Income(int income){
+        this.income = income;
+        Font font = new Font(true, false, 20);
+        incomeImage = new GreenfootImage(250, 50);
+        incomeImage.setColor(Color.BLACK);
+        incomeImage.setFont(font);
+        incomeImage.drawString("Income: \n    $"+ income, 0, 20);
+        setImage(incomeImage);
+        }
     //updates income image
     public void act()
     {
+        setIncome(this.income);
         incomeImage.setColor(Color.BLACK);
         incomeImage.clear();
-        incomeImage.drawString("Income: \n    $"+ income, 0, 20);
+        incomeImage.drawString("Income: \n$"+ this.income, 0, 20);
         setImage(incomeImage); 
+    }
+    
+    public static void setIncome(int amount){
+        income = amount;
     }
     
     public void increaseIncome(int amount){
@@ -43,7 +57,6 @@ public class Income extends Actor
         incomeImage.drawString("Income: \n    $"+ this.income, 0, 20);
         setImage(incomeImage); 
     }
-    
     
     public void decreaseIncome(int amount){
         this.income = this.income - amount;

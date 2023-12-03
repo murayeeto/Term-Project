@@ -10,8 +10,7 @@ public class BankAccount extends Actor
 {
 
     private GreenfootImage bankaccountImage;
-    public static double balance;
-    // dont really need number
+    public static double balance;  // dont really need number
 
     /**
      * Act - do whatever the CreditScore wants to do. This method is called whenever
@@ -29,6 +28,9 @@ public class BankAccount extends Actor
         setImage(bankaccountImage);
     }
 
+    public static void setBalance(int amount){
+        balance = amount;
+    }
     
     // updates bank account image
     public void act()

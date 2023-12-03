@@ -15,7 +15,6 @@ public class CreditScore extends Actor
     //private Character character;
     //private int current_score = character.getCredit();
     
-    
     /**
      * Act - do whatever the CreditScore wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -50,6 +49,10 @@ public class CreditScore extends Actor
         creditscoreImage.drawString("Credit Score: \n      "+ scoreNumber, 0, 20);
         setImage(creditscoreImage);
          
+    }
+    
+    public static void setCreditScore(int amount){
+        scoreNumber = amount;
     }
     
     // method that returns a color based on the scoreNumber value

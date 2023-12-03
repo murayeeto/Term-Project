@@ -20,7 +20,7 @@ public class CharacterIcon extends Actor
     public CharacterIcon(){
         GreenfootImage image = CharacterImage.getCharacter();
         setImage(image);
-        getImage().scale(50,50);
+        image.scale(50,50);
     }
     
     public void act(){
