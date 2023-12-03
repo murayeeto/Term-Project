@@ -13,27 +13,17 @@ public class Character extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private int Age;
-    //public double StartingMoney = 0.0;
-    //public static double Money;
-    private BankAccount bankAccount;
-    private CreditScore userScore;
-    private Income income;
-    //public int StartingCredit = 300;
-    //public static int Credit;
-    //private BankAccount bankAccount;
-    //private CreditScore userCredit;
+    private double StartingMoney = 0.0;
+    private double Money;
+    private int StartingCredit = 0;
+    private int Credit;
     // Constructor
     public Character() {
         Age = 18;
-        bankAccount = new BankAccount(100);
-        userScore = new CreditScore(300);
-        
-        //Money = StartingMoney;
-        //Credit = StartingCredit;
+        Money = StartingMoney;
+        Credit = StartingCredit;
         String name = NameInput.getName();
         String career = CareerInput.getCareer();
-        //bankAccount.setBalance(this.Money);
-        //userCredit.setScoreNumber(this.Credit);
 
     }
     
@@ -42,28 +32,21 @@ public class Character extends Actor
         return Age;
     }
 
-    public double getBalance() {
-        return bankAccount.getBalance();
-    }
-    
-    public BankAccount getBankAccount(){
-        return bankAccount;
+    public double getMoney() {
+        return Money;
     }
 
     public int getCredit() {
-        return userScore.getScoreNumber();
+        return Credit;
     }
     
-    public CreditScore getUserScore(){
-        return userScore;
-    }
     //setters
-    public void setCredit(int credit) {
-        userScore.setScoreNumber(credit);
+    public void setCredit(int Credit) {
+        this.Credit = Credit;
     }
 
     public void setMoney(double Money) {
-        bankAccount.setBalance(Money);
+        this.Money = Money;
     }
     
     public void setAge(int Age) {

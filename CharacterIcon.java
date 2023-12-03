@@ -9,10 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class CharacterIcon extends Actor
 {
-    private Character character;
-    //private BankAccount bankAccount;
-    //private CreditScore userCredit;
-    //private Income income;
     /**
      * Act - do whatever the PreviousArrow wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -27,7 +23,7 @@ public class CharacterIcon extends Actor
         boolean clicked = Greenfoot.mouseClicked(this);
         if (clicked){
             //Need to change the world to the actual game world
-           Greenfoot.setWorld(new StatScreen(character));
+           Greenfoot.setWorld(new MyWorld());
         }
     }
 }
