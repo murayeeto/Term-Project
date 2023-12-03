@@ -1,10 +1,18 @@
 #BlueJ class context
 comment0.target=NameInput
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Textbox\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ Textbox\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=void\ act()
 comment2.params=
 comment2.target=NameInput()
 comment3.params=
 comment3.target=java.lang.String\ getName()
-numComments=4
+comment4.params=
+comment4.target=void\ save()
+comment5.params=
+comment5.target=void\ load()
+comment6.params=
+comment6.target=void\ saveName()
+comment7.params=
+comment7.target=void\ loadName()
+numComments=8

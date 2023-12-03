@@ -36,7 +36,7 @@ public class MyWorld extends World
         //accountBalance.increaseBalance(500000);
         Income userIncome = new Income();
         addObject(userIncome,390,220);
-        CreditScore userScore = new CreditScore(); 
+        CreditScore userScore = new CreditScore(0); 
         addObject(userScore,370,300);
         
         ContinueArrow goBack = new ContinueArrow();

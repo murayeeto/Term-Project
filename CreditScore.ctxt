@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=CreditScore
+comment0.text=\n\ Write\ a\ description\ of\ class\ CreditScore\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=scoreNumber
+comment1.target=CreditScore(int)
+comment1.text=\n\ Act\ -\ do\ whatever\ the\ CreditScore\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ \ \ \ public\ CreditScore(CreditScore\ userCredit){\n\ \ \ \ \ \ \ \ scoreNumber\ \=\ userCredit.scoreNumber;\n}
+comment3.params=amount
+comment3.target=void\ setCreditScore(int)
+comment4.params=
+comment4.target=greenfoot.Color\ getColor()
+comment5.params=
+comment5.target=int\ getScoreNumber()
+comment5.text=public\ void\ increaseScoreNumber(int\ amount){\n\ \ \ \ \ \ \ \ this.scoreNumber\ \=\ this.scoreNumber\ +\ amount;\n\ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ creditscoreImage.clear();\n\ \ \ \ \ \ \ \ creditscoreImage.drawString("Credit\ Score\:\ \\n\ \ \ \ \ \ "+\ this.scoreNumber,\ 0,\ 20);\n\ \ \ \ \ \ \ \ setImage(creditscoreImage);\n\ \ \ \ }\n\ \ \ \ \n\ \ \ \ \n\ \ \ \ public\ void\ decreaseScoreNumber(int\ amount){\n\ \ \ \ \ \ \ \ this.scoreNumber\ \=\ this.scoreNumber\ -\ amount;\n\ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ creditscoreImage.clear();\n\ \ \ \ \ \ \ \ creditscoreImage.drawString("Credit\ Score\:\ \\n\ \ \ \ \ \ "+\ this.scoreNumber,\ 0,\ 20);\n\ \ \ \ \ \ \ \ setImage(creditscoreImage);\n}
+comment6.params=scoreNumber
+comment6.target=void\ setScoreNumber(int)
+numComments=7

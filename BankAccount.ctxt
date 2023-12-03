@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=BankAccount
+comment0.text=\n\ Write\ a\ description\ of\ class\ AccountBalance\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=BankAccount()
+comment1.text=\n\ Act\ -\ do\ whatever\ the\ CreditScore\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment2.params=balance
+comment2.target=BankAccount(int)
+comment3.params=amount
+comment3.target=void\ setBalance(int)
+comment4.params=
+comment4.target=void\ act()
+comment5.params=
+comment5.target=double\ getBalance()
+comment5.text=\n\ \ \ \ public\ void\ decreaseBalance(double\ amount){\n\ \ \ \ \ \ \ \ this.balance\ \=\ balance\ -\ amount;\n\ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ bankaccountImage.clear();\n\ \ \ \ \ \ \ \ bankaccountImage.drawString("Account\ Balance\:\ \\n\ \ \ \ \ \ $"+\ this.balance,\ 0,\ 20);\n\ \ \ \ \ \ \ \ setImage(bankaccountImage);\n}
+comment6.params=balance
+comment6.target=void\ setBalance(double)
+comment7.params=amount
+comment7.target=void\ updateBalance(double)
+numComments=8

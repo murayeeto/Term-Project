@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Income
+comment0.text=\n\ Write\ a\ description\ of\ class\ Income\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Income()
+comment1.text=\n\ Act\ -\ do\ whatever\ the\ CreditScore\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment2.params=income
+comment2.target=Income(int)
+comment3.params=
+comment3.target=void\ act()
+comment4.params=amount
+comment4.target=void\ setIncome(int)
+comment5.params=amount
+comment5.target=void\ increaseIncome(int)
+comment6.params=amount
+comment6.target=void\ decreaseIncome(int)
+numComments=7
