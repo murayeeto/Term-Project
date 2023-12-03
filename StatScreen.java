@@ -7,38 +7,52 @@ import greenfoot.GreenfootImage;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MyWorld extends World
+public class StatScreen extends World
 {
-
+    private Character character;
+    //private BankAccount bankAccount;
+    //private CreditScore userCredit;
+    //private Income income;
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
     //creates a new world that uses the spawn method
-    public MyWorld()
+    //Character character, BankAccount balance, CreditScore scoreNumber, Income income
+    
+    public StatScreen(Character character)
     {    
         // Create a new world with 500x510 cells with a cell size of 1x1 pixels.
         //super(500, 510, 1); 
+        
         super(600, 400, 1); 
+        
         setBackground("images/Backgrounds/cityandtown.PNG");
+        this.character = character;
+        //this.bankAccount = bankAccount;
+        //this.userCredit = userCredit;
+        //this.income = income;
         spawn();
         
     }
 
     //creates objects in the world and sets their x and y values
+    
     private void spawn() {
         PhoneScreen phone = new PhoneScreen();
         addObject(phone,310,195);
         StatScreenTitle statTitle = new StatScreenTitle();
-        addObject(statTitle,310,70);
-        BankAccount accountBalance = new BankAccount();
-        addObject(accountBalance,350,140); 
-        //accountBalance.increaseBalance(500000);
-        Income userIncome = new Income();
-        addObject(userIncome,390,220);
-        CreditScore userScore = new CreditScore(0); 
-        addObject(userScore,370,300);
         
+        //addObject(statTitle,310,70);
+        //addObject(bankAccount,350,140);
+        //addObject(bankAccount(character.getMoney()),350,140);
+        addObject(character.getBankAccount(),350,140);
+        addObject(character.getUserScore(),370,300);
+        
+        Income income = new Income();
+        addObject(income,390,220); 
+        
+        //addObject(userCredit,370,300);
         ContinueArrow goBack = new ContinueArrow();
         goBack.setImage("images/icons/cont_prevArrow.PNG");
         goBack.getImage().scale(80,50);
