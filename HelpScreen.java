@@ -22,5 +22,13 @@ public class HelpScreen extends World
         addObject(new PreviousArrow(),45,365);
         //The coordinate object. Remove when its no longer needed.
         addObject(new Coordinate(), 450,300);
+        
+        PreviousArrow nextScreen = new PreviousArrow();
+        addObject(nextScreen, 545, 365);
+        addObject(new ContinueArrow(),45,365);
+    }
+    
+    public void spawnText(){
+        
     }
 }
