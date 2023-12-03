@@ -10,7 +10,6 @@ public class BankAccount extends Actor
 {
 
     private GreenfootImage bankaccountImage;
-    public static double balance;  // dont really need number
     private static int balance;
     // dont really need number
 
@@ -21,8 +20,11 @@ public class BankAccount extends Actor
     
     // creates a bank account image with a balance of 0
     public BankAccount(){
+<<<<<<< HEAD
         this.balance = balance;
+=======
         balance = 0;
+>>>>>>> parent of 66a1202 (Merge pull request #10 from murayeeto/teyonna-tasks)
         Font font = new Font(true, false, 20);
         bankaccountImage = new GreenfootImage(250, 50);
         bankaccountImage.setColor(Color.BLACK);
@@ -48,10 +50,13 @@ public class BankAccount extends Actor
     // updates bank account image
     public void act()
     {
+<<<<<<< HEAD
         setBalance(this.balance);
+=======
+>>>>>>> parent of 66a1202 (Merge pull request #10 from murayeeto/teyonna-tasks)
         bankaccountImage.setColor(Color.BLACK);
-        //updateBalance();
         bankaccountImage.clear();
+<<<<<<< HEAD
         bankaccountImage.drawString("Account Balance: \n      $"+balance, 0, 20);
         setImage(bankaccountImage);   
     }
@@ -72,12 +77,14 @@ public class BankAccount extends Actor
     /*
     public void decreaseBalance(double amount){
         this.balance = balance - amount;
+=======
         bankaccountImage.drawString("Account Balance: \n          $"+balance, 0, 20);
         setImage(bankaccountImage);   
     }
     
     public void increaseBalance(int amount){
         this.balance = this.balance + amount;
+>>>>>>> parent of 66a1202 (Merge pull request #10 from murayeeto/teyonna-tasks)
         
         bankaccountImage.clear();
         bankaccountImage.drawString("Account Balance: \n      $"+ this.balance, 0, 20);
