@@ -18,21 +18,27 @@ public class ContinueArrow extends Actor
         new TitleOptions().textEffect("START",28);
         boolean clicked = Greenfoot.mouseClicked(this);
         if (clicked){
-            if (NameInput.getName() == "" || CareerInput.getCareer() == ""){
-                if (NameInput.getName() == ""){
-                    NameInput.noName = true; 
+            if (getWorld() instanceof CharacterScreen){
+                if (NameInput.getName() == "" || CareerInput.getCareer() == ""){
+                    if (NameInput.getName() == ""){
+                        NameInput.noName = true; 
+                    }
+                    if (CareerInput.getCareer() == ""){
+                        CareerInput.noCareer = true;
+                    } 
+                } else {
+                    CharacterImage.saveCharacter();
+                    NameInput.saveName();
+                    CareerInput.saveCareer();
+                    Greenfoot.setWorld(new GameScreen());
                 }
-                if (CareerInput.getCareer() == ""){
-                    CareerInput.noCareer = true;
-                } 
+            } else if (getWorld() instanceof EndScreen && !(getWorld() instanceof AdviceScreen)){
+                Greenfoot.setWorld(new AdviceScreen());
             } else {
-                CharacterImage.saveCharacter();
-                NameInput.saveName();
-                CareerInput.saveCareer();
-                Greenfoot.setWorld(new GameScreen());
+                Greenfoot.setWorld(new TitleScreen());
             }
         }
-    }  
+    }
 
     public ContinueArrow(){
         setImage("images/icons/cont_prevArrow.PNG");
