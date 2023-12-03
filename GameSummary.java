@@ -19,7 +19,7 @@ public class GameSummary extends Actor
     
     public GameSummary(){
         NameInput.loadName();
-        setImage(new GreenfootImage(NameInput.getName()+" ended with "+"$"+new Character().getMoney()+" and a credit score of "+new Character().getCredit(),24,Color.BLACK,new Color(0, 0, 0, 0)));
+        setImage(new GreenfootImage(NameInput.getName()+" ended with "+"$"+new Character().getBalance()+" and a credit score of "+new Character().getCredit(),24,Color.BLACK,new Color(0, 0, 0, 0)));
     }
     
 }

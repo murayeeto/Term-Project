@@ -37,7 +37,7 @@ public class Event extends Actor{
     public void act() {
         Character Player = ((GameScreen)getWorld()).getPlayer(); 
 
-        Player.setMoney(Player.getMoney() + MoneyImpact);
+        Player.bankAccount.setBalance(Player.getBalance() + MoneyImpact);
         Player.setCredit(Player.getCredit() + CreditImpact);
         // You can put other specific stuff here like ifs and logic
     }
