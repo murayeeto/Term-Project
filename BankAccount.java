@@ -10,8 +10,7 @@ public class BankAccount extends Actor
 {
 
     private GreenfootImage bankaccountImage;
-    private static int balance;
-    // dont really need number
+    public static double balance;  // dont really need number
 
     /**
      * Act - do whatever the CreditScore wants to do. This method is called whenever
@@ -48,25 +47,42 @@ public class BankAccount extends Actor
     {
         setBalance(this.balance);
         bankaccountImage.setColor(Color.BLACK);
+        //updateBalance();
         bankaccountImage.clear();
         bankaccountImage.drawString("Account Balance: \n      $"+balance, 0, 20);
         setImage(bankaccountImage);   
     }
     
-    public void increaseBalance(int amount){
-        this.balance = this.balance + amount;
+    /*public void updateBalance(){
+        this.balance = balance+character.getMoney();
+        
+        bankaccountImage.clear();
+        setImage(bankaccountImage);
+    }*/
+    /*public void updateBalance(){
+        setBalance(character.getMoney());
+        
+        bankaccountImage.clear();
+        bankaccountImage.drawString("Account Balance: \n          $"+ getBalance(), 0, 20);
+        setImage(bankaccountImage);
+    }*/
+    /*
+    public void decreaseBalance(double amount){
+        this.balance = balance - amount;
         
         bankaccountImage.clear();
         bankaccountImage.drawString("Account Balance: \n      $"+ this.balance, 0, 20);
         setImage(bankaccountImage);
+    }*/
+    public double getBalance(){
+        return balance;
+    }
+    public void setBalance(double balance){
+        this.balance = balance;
     }
     
-    public void decreaseBalance(int amount){
-        this.balance = this.balance - amount;
-        
-        bankaccountImage.clear();
-        bankaccountImage.drawString("Account Balance: \n      $"+ this.balance, 0, 20);
-        setImage(bankaccountImage);
+    public void updateBalance(double amount){
+        balance += amount;
     }
 }
 

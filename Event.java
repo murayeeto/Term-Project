@@ -9,13 +9,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Event extends Actor{
     private String Description;
     private double MoneyImpact;
-    private int HappinessImpact;
     private int CreditImpact;
 
-    public Event(String Description, double MoneyImpact, int HappinessImpact, int CreditImpact) {
+    public Event(String Description, double MoneyImpact, int CreditImpact) {
         this.Description = Description;
         this.MoneyImpact = MoneyImpact;
-        this.HappinessImpact = HappinessImpact;
         this.CreditImpact = CreditImpact;
 
     }
@@ -23,12 +21,23 @@ public class Event extends Actor{
     public String getDescription(){
         return Description;
     }
+    
+    public void setDescription(String Description){
+        this.Description = Description;
+    }
+    
+    public void setEventMoney(double MoneyImpact){
+        this.MoneyImpact = MoneyImpact;
+    }
+    
+    public void setEventCredit(int CreditImpact){
+        this.CreditImpact = CreditImpact;
+    }
 
     public void act() {
         Character Player = ((GameScreen)getWorld()).getPlayer(); 
 
-        Player.setMoney(Player.getMoney() + HappinessImpact);
-        Player.setHappiness(Player.getHappiness() + HappinessImpact);
+        Player.setMoney(Player.getMoney() + MoneyImpact);
         Player.setCredit(Player.getCredit() + CreditImpact);
         // You can put other specific stuff here like ifs and logic
     }

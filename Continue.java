@@ -17,8 +17,14 @@ public class Continue extends TitleOptions
         textEffect("CONTINUE",28);
         boolean clicked = Greenfoot.mouseClicked(this);
         if (clicked){
-            //Need to change the world to the actual game world
-            Greenfoot.setWorld(new CharacterScreen());
+            CharacterImage.loadCharacter();
+            NameInput.loadName();
+            CareerInput.loadCareer();
+            // Event.loadEvent();
+            if (NameInput.getName()!= null && NameInput.getName()!= "" 
+            && CareerInput.getCareer()!= null && CareerInput.getCareer()!= "" && CharacterImage.getCharacter()!= null){
+                Greenfoot.setWorld(new GameScreen());
+            }
         }
     }
     
