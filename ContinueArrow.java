@@ -12,7 +12,8 @@ public class ContinueArrow extends Actor
      * Act - do whatever the PreviousArrow wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-
+    private GameScreen world;
+    private Character player;   
     public void act()
     {
         new TitleOptions().textEffect("START",28);
@@ -34,8 +35,10 @@ public class ContinueArrow extends Actor
                 }
             } else if (getWorld() instanceof EndScreen && !(getWorld() instanceof AdviceScreen)){
                 Greenfoot.setWorld(new AdviceScreen());
+            } else if (getWorld() instanceof StatScreen) {
+                Greenfoot.setWorld(new GameScreen(player));
             } else {
-                Greenfoot.setWorld(new TitleScreen());
+               Greenfoot.setWorld(new TitleScreen()); 
             }
         }
     }
@@ -45,4 +48,14 @@ public class ContinueArrow extends Actor
         getImage().mirrorHorizontally();
         getImage().scale(80,50);
     }
+    
+    public ContinueArrow(GameScreen world, Character player){
+        this.world = world;
+        this.player = player;
+        setImage("images/icons/cont_prevArrow.PNG");
+        getImage().mirrorHorizontally();
+        getImage().scale(80,50);
+    }
+    
+    
 }
