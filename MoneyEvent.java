@@ -12,7 +12,7 @@ public class MoneyEvent extends Event
         super("You invested in some sort of stock", 10.00, 0);
         switch(choice){
             case 0:
-                setDescription("use getDescription() to retrieve whatevre the constructors message is or just set it to something new with the setter method" + "10.00$"); 
+                setDescription("test" + "10.00$"); 
                 break;
             case 1:
                 setDescription("You got paid \nBalance: +$1523.67"); 

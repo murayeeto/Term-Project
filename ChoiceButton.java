@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
 
 /**
  * Write a description of class ChoiceButton here.
@@ -21,7 +22,9 @@ public class ChoiceButton extends Actor {
     public void act() {
         if (Greenfoot.mouseClicked(this)) {
             world.handleChoice(choice);
-            world.removeObjects(world.getObjects(ChoiceButton.class));
+            List<ChoiceButton> choiceButtons = world.getObjects(ChoiceButton.class);
+            world.removeObjects(choiceButtons);
+
         }
     }
 }
