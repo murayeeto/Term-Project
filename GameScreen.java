@@ -64,8 +64,7 @@ public class GameScreen extends World
         displayEvent(Description);
         eventHistory.add(MoneyEvent);
         Greenfoot.delay(100);
-        System.out.println(player.getBalance());
-        System.out.println(player.getAge());
+
         // Remove the Event from the world.
         removeObject(MoneyEvent);
 
