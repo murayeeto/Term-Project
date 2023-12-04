@@ -22,6 +22,7 @@ public class Event extends Actor{
         return Description;
     }
     
+    
     public void setDescription(String Description){
         this.Description = Description;
     }
@@ -36,8 +37,9 @@ public class Event extends Actor{
 
     public void act() {
         Character Player = ((GameScreen)getWorld()).getPlayer(); 
+        BankAccount bankaccount = Player.getBankAccount();
 
-        Player.bankAccount.setBalance(Player.getBalance() + MoneyImpact);
+        bankaccount.setBalance(Player.getBalance() + MoneyImpact);
         Player.setCredit(Player.getCredit() + CreditImpact);
         // You can put other specific stuff here like ifs and logic
     }
