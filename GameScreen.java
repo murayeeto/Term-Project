@@ -31,7 +31,7 @@ public class GameScreen extends World
         addObject(new AgeButton(player, this), 500, 300);
         if (player.getBalance() == 100){
             handleMoneyEvent(3);
-             displayChoices(1);
+            displayChoices(1); 
         }
         displayEventHistory();
     }
@@ -56,6 +56,9 @@ public class GameScreen extends World
     //handlers
     public void handleMoneyEvent(int eventnumber) {
         MoneyEvent MoneyEvent = new MoneyEvent(eventnumber);
+        BankAccount bankaccount = player.getBankAccount();
+        bankaccount.setBalance(MoneyEvent.getEventMoney() + player.getBalance());
+        player.setCredit(player.getCredit() + MoneyEvent.getEventCredit());
         String Description = MoneyEvent.getDescription();
         // Add the Event to the world
         addObject(MoneyEvent, 100, 100);
