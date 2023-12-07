@@ -22,8 +22,6 @@ public class ChoiceButton extends Actor {
     public void act() {
         if (Greenfoot.mouseClicked(this)) {
             world.handleChoice(choice);
-            List<ChoiceButton> choiceButtons = world.getObjects(ChoiceButton.class);
-            world.removeObjects(choiceButtons);
 
         }
     }

@@ -1,0 +1,222 @@
+#!/bin/bash -x
+
+echo "-------------------------------------------"
+echo "Creating an access point with ssid=${SSID}!"
+echo "-------------------------------------------"
+
+errCode=1
+
+function incErrCode()
+{
+  errCode=$(( errCode++ ))
+}
+
+function error()
+{
+  [[ $# -eq 1 ]] && msg=${1}
+  if [[ -n ${msg} ]]
+  then
+    echo "${msg}" >> /tmp/ap-err.txt
+  fi
+  exit ${errCode}
+}
+
+hostnamectl set-hostname ${1}
+incErrCode
+[[ $? -eq 0 ]] || error
+
+cp /etc/hosts /tmp/hosts.old
+sed -e 's/raspberrypi/${1}/' /etc/hosts > /tmp/hosts
+incErrCode
+[[ $? -eq 0 ]] || error
+
+mv /tmp/hosts /etc/hosts
+incErrCode
+[[ $? -eq 0 ]] || error
+
+SSID=$(hostname)
+PASS="pemacs.1"
+
+#apt-get update
+#incErrCode
+#[[ $? -eq 0 ]] || error
+
+#apt-get -y upgrade
+#incErrCode
+#[[ $? -eq 0 ]] || error
+
+#apt-get -y dist-upgrade
+#incErrCode
+#[[ $? -eq 0 ]] || error
+
+apt-get -y install hostapd
+incErrCode
+[[ $? -eq 0 ]] || error
+
+apt-get -y install dnsmasq
+incErrCode
+[[ $? -eq 0 ]] || error
+
+systemctl stop hostapd
+incErrCode
+[[ $? -eq 0 ]] || error
+
+systemctl stop dnsmasq
+incErrCode
+[[ $? -eq 0 ]] || error
+
+cp /etc/dhcpcd.conf /etc/dhcpd.conf.orig
+incErrCode
+[[ $? -eq 0 ]] || error
+
+if [[ ! $(tail -n 1 /etc/dhcpcd.conf) =~ nohook ]]
+then
+  cat >> /etc/dhcpcd.conf <<EOHD
+interface wlan0
+static ip_address=10.10.10.10/24
+nohook wpa_supplicant
+EOHD
+fi
+
+incErrCode
+[[ $? -eq 0 ]] || error
+
+cp /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
+incErrCode
+[[ $? -eq 0 ]] || error
+
+if [[ ! $(tail -n 1 /etc/dnsmasq.conf) =~ dhcp-range ]]
+then
+cat > /etc/dnsmasq.conf <<EOHD
+interface=wlan0
+  dhcp-range=10.10.10.11,10.10.10.30,255.255.255.0,24h 
+EOHD
+fi
+
+incErrCode
+[[ $? -eq 0 ]] || error
+
+if [[ ! -e /etc/hostapd/hostapd.conf ]] 
+then
+  cat > /etc/hostapd/hostapd.conf <<EOHD
+interface=wlan0
+#driver=nl80211
+ssid=${SSID}
+hw_mode=g
+channel=7
+wmm_enabled=0
+macaddr_acl=0
+auth_algs=1
+ignore_broadcast_ssid=0
+wpa=2
+wpa_passphrase=${PASS}
+wpa_key_mgmt=WPA-PSK
+wpa_pairwise=TKIP
+rsn_pairwise=CCMP
+EOHD
+fi
+
+incErrCode
+[[ $? -eq 0 ]] || error
+
+if [[ ! $(tail -n 1 /etc/default/hostapd) =~ hostapd ]]
+then
+cat >> /etc/default/hostapd <<EOHD
+DAEMON_CONF="/etc/hostapd/hostapd.conf"
+EOHD
+fi
+
+incErrCode
+[[ $? -eq 0 ]] || error
+
+#cp /etc/sysctl.conf /etc/sysctl.conf.orig
+#incErrCode
+#[[ $? -eq 0 ]] || error
+#sed -r 's/^#(net.ipv4.ip_fo*)/\1/' /etc/sysctl.conf > /tmp/sysctl.conf
+#incErrCode
+#[[ $? -eq 0 ]] || error
+#mv /tmp/sysctl.conf /etc/sysctl.conf
+#incErrCode
+#[[ $? -eq 0 ]] || error
+
+#iptables -t nat -A POSTROUTING -o wlan1 -j MASQUERADE
+#[[ $? -eq 0 ]] || error
+
+#iptables-save > /etc/iptables.ip4.nat
+#[[ $? -eq 0 ]] || error
+
+#if [[ ! $(tail -n 2 /etc/rc.local) =~ ip4 ]]
+#then
+#  cat > /etc/network/if-up.d/iptables <<EOHD
+
+#iptables-restore < /etc/iptables.ip4.nat
+#EOHD
+#  [[ $? -eq 0 ]] || error
+#  chmod +x /etc/network/if-up.d/iptables
+#  [[ $? -eq 0 ]] || error
+#fi
+
+systemctl enable dnsmasq
+incErrCode
+[[ $? -eq 0 ]] || error
+
+systemctl unmask hostapd
+incErrCode
+[[ $? -eq 0 ]] || error
+
+systemctl enable hostapd
+incErrCode
+[[ $? -eq 0 ]] || error
+
+# set up ProjComm files
+
+hmod 744 broadcast.py
+incErrCode
+[[ $? -eq 0 ]] || error
+
+chmod 744 server.py
+incErrCode
+[[ $? -eq 0 ]] || error
+
+chmod 744 client.py
+incErrCode
+[[ $? -eq 0 ]] || error
+
+chmod 744 getip.py
+incErrCode
+[[ $? -eq 0 ]] || error
+
+chmod 644 proj-broadcast.service
+incErrCode
+[[ $? -eq 0 ]] || error
+
+chmod 644 proj-server.service
+incErrCode
+[[ $? -eq 0 ]] || error
+
+cp proj-broadcast.service /usr/lib/systemd/system/.
+incErrCode
+[[ $? -eq 0 ]] || error
+
+systemctl enable proj-broadcast.service
+incErrCode
+[[ $? -eq 0 ]] || error
+
+cp proj-broadcast.server /usr/lib/systemd/system/.
+incErrCode
+[[ $? -eq 0 ]] || error
+
+systemctl enable proj-server.service
+incErrCode
+[[ $? -eq 0 ]] || error
+
+echo "Pi access point configured!"
+echo "--------------------------------"
+echo "To connect to your Pi, do the following:"
+echo "    1. Plug your Wifi dongle into the Raspberry Pi."
+echo "    2. Connect your laptop Wifi to the ${SSID} access point after reboot."
+echo "    3. Use VNC Player to connect to 10.10.10.10"
+echo ""
+echo "Your Pi will reboot in 5 seconds..."
+sleep 5
+reboot

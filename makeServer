@@ -1,0 +1,83 @@
+#!/bin/bash -x
+
+echo "-------------------------------------------"
+echo "Creating a broadcast server on port 13000"
+echo " and server on port 12000"
+echo "-------------------------------------------"
+
+errCode=1
+
+function incErrCode()
+{
+  errCode=$(( errCode++ ))
+}
+
+function error()
+{
+  [[ $# -eq 1 ]] && msg=${1}
+  if [[ -n ${msg} ]]
+  then
+    echo "${msg}" >> /tmp/ap-err.txt
+  fi
+  exit ${errCode}
+}
+
+hostnamectl set-hostname ${1}
+incErrCode
+[[ $? -eq 0 ]] || error
+
+cp /etc/hosts /tmp/hosts.old
+sed -e "s/raspberrypi/${1}/" /etc/hosts > /tmp/hosts
+incErrCode
+[[ $? -eq 0 ]] || error
+
+mv /tmp/hosts /etc/hosts
+incErrCode
+[[ $? -eq 0 ]] || error
+
+apt-get update
+incErrCode
+[[ $? -eq 0 ]] || error
+
+apt-get -y upgrade
+incErrCode
+[[ $? -eq 0 ]] || error
+
+apt-get -y dist-upgrade
+incErrCode
+[[ $? -eq 0 ]] || error
+
+pip3 install netifaces
+incErrCode
+[[ $? -eq 0 ]] || error
+
+cp proj-broadcast.service /usr/lib/systemd/system/.
+incErrCode
+[[ $? -eq 0 ]] || error
+
+systemctl enable proj-broadcast.service
+incErrCode
+[[ $? -eq 0 ]] || error
+
+cp proj-server.service /usr/lib/systemd/system/.
+incErrCode
+[[ $? -eq 0 ]] || error
+
+systemctl enable proj-server.service
+incErrCode
+[[ $? -eq 0 ]] || error
+
+systemctl enable vncserver-x11-serviced.service
+incErrCode
+[[ $? -eq 0 ]] || error
+
+systemctl enable ssh.service
+incErrCode
+[[ $? -eq 0 ]] || error
+
+echo "-----------------------------------"
+echo "       Pi configured!"
+echo "Your Pi will reboot in 5 seconds..."
+echo "-----------------------------------"
+sleep 5
+reboot

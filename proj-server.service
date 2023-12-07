@@ -1,0 +1,9 @@
+[Unit]
+Description=Start server
+After=multi-user.target.target
+
+[Service]
+ExecStart=/opt/utils/ProjectComm/server.py
+
+[Install]
+WantedBy=default.target

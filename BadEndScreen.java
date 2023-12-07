@@ -12,10 +12,12 @@ public class BadEndScreen extends EndScreen
      * Constructor for objects of class BadEndScreen.
      * 
      */
-    public BadEndScreen()
-    {    
+    private Character player;
+    public BadEndScreen(Character player)
+    {   
+        this.player = player;
         addObject(new GameOver(),300,35);
-        addObject(new GameSummary(),300,100);
+        addObject(new GameSummary(player),300,100);
         if (true){//should be Character.getAchievements().size > 0 
             addObject(new GameAchievements(),295,230);
         }

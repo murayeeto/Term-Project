@@ -22,13 +22,16 @@ public class HelpScreen extends World
         addObject(new PreviousArrow(),45,365);
         //The coordinate object. Remove when its no longer needed.
         addObject(new Coordinate(), 450,300);
-        
+        displayHelpMessage();
         PreviousArrow nextScreen = new PreviousArrow();
         addObject(nextScreen, 545, 365);
         addObject(new ContinueArrow(),45,365);
     }
-    
-    public void spawnText(){
-        
+
+    private void displayHelpMessage() {
+        String helpMessage = "Hello! Welcome to the wonderful world of CreditLife.\n This Game is quite simple\n but it can be tough for newcomers.\n The goal is to finish your life with as much money \nand as good of credit as you possibly can. \n you can achieve this by making choices, \nand getting random events \nby clicking the plus button";
+        TextOverlay helpText = new TextOverlay(helpMessage);
+        addObject(helpText, getWidth() / 2, getHeight() / 2);
     }
+    
 }

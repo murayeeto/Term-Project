@@ -37,10 +37,9 @@ public class AgeButton extends Actor {
         if (Greenfoot.mouseClicked(this)) {
             checkAgeEnding();
             int randomNumber = rand.nextInt(32);
-            player.setAge(player.getAge() + 2);
+            player.setAge(player.getAge() + 1);
             world.removeTextOverlays();
             world.handleMoneyEvent(randomNumber);
-            
         }
     }
     public void clearEvents(){
