@@ -74,12 +74,12 @@ public class BankAccount extends Actor
     public double getBalance(){
         return balance;
     }
-    public void setBalance(double balance){
-        this.balance = balance;
+    public static void setBalance(double balancee){
+        balance = balancee;
     }
     
-    public void setBalance(int balance){
-        this.balance = balance;
+    public static void setBalance(int balancee){
+        balance = balancee;
     }
     
     public void updateBalance(double amount){

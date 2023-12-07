@@ -223,34 +223,34 @@ public class MoneyEvent extends Event
                 break;
                 
                 
-            case 4:
+            case 43:
                 setDescription("You receive a job offer with a higher salary,\n but it's in a more expensive city. \nShould you relocate and or stay where you are?"); 
                 setEventMoney(-2000);
                 setEventCredit(0);
                 break;    
-            case 43:
+            case 44:
                 setDescription("You chose to relocate, but your \ncost of living increased so much, \n the raise wasn't worth it. \n - $5000");
                 setEventMoney(-5000);
                 setEventCredit(0);
                 break;
-            case 44:
+            case 45:
                 setDescription("You chose to stay where you are. \nYour boss decided to give you a bonus! \n + $5000");
                 setEventMoney(5000);
                 setEventCredit(0);
                 break;
               
                 
-            case 20:
+            case 46:
                 setDescription("You want to buy Christmas Gifts.\n You could use credit, but you can't pay it off.\n Should you buy the gifts and use credit?");
                 setEventMoney(0);
                 setEventCredit(-10);
                 break;    
-            case 45:
+            case 47:
                 setDescription("You chose to use the credit card \nand was unable to pay it back. \n - 30");
                 setEventMoney(0);
                 setEventCredit(-30);
                 break;
-            case 46:
+            case 48:
                 setDescription("You chose not to use the card, \nand find a cheaper gift! \n + 10");
                 setEventMoney(0);
                 setEventCredit(10);
@@ -258,17 +258,17 @@ public class MoneyEvent extends Event
             
                 
                 
-            case 25:
+            case 49:
                 setDescription("Your relative bought you stocks as a birthday gift. \nShould you keep the stock or sell it?");
                 setEventMoney(0);
                 setEventCredit(0);
                 break;    
-            case 47:
+            case 50:
                 setDescription("You chose to keep the stocks and made \nmore money in the long run! \n + $3000");
                 setEventMoney(3000);
                 setEventCredit(10);
                 break;
-            case 48:
+            case 51:
                 setDescription("You chose to sell the stocks, \nand missed a giant value increase. \n - $1500");
                 setEventMoney(-1500);
                 setEventCredit(10);
@@ -276,17 +276,17 @@ public class MoneyEvent extends Event
             
                 
                 
-            case 22:
+            case 52:
                 setDescription("You want to buy your dream car, but you're broke.\n Should you take out a loan \nor wait until you have enough cash?");
                 setEventMoney(0);
                 setEventCredit(0);
                 break;
-            case 49:
+            case 53:
                 setDescription("You chose to take out a loan, and \nare struggling to pay it back. \n - 30");
                 setEventMoney(0);
                 setEventCredit(-30);
                 break;
-            case 50:
+            case 54:
                 setDescription("You chose to wait/find a cheaper car! \n + 30");
                 setEventMoney(0);
                 setEventCredit(30);
