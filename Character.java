@@ -26,7 +26,7 @@ public class Character extends Actor
     public Character() {
         Age = 18;
         bankAccount = new BankAccount(100);
-        userScore = new CreditScore(300);
+        userScore = new CreditScore(600);
         
         //Money = StartingMoney;
         //Credit = StartingCredit;
