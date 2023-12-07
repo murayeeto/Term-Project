@@ -23,17 +23,19 @@ public class GoodEndScreen extends EndScreen
      *    
      * Inside Event() act(), add: 
      * if (creditScore == 850){
-	Character.addAchievement("Credit Master: Achieved a perfect score of 850!");}
+    Character.addAchievement("Credit Master: Achieved a perfect score of 850!");}
      */
     /**
      * Constructor for objects of class EndScreen.
      * 
      */
-    public GoodEndScreen()
+    private Character player;
+    public GoodEndScreen(Character player)
     {    
+        this.player = player;
         setBackground("images/Backgrounds/citypopup.png");
         addObject(new Congratulations(),300,35);
-        addObject(new GameSummary(),300,100);
+        addObject(new GameSummary(player),300,100);
         addObject(new GameAchievements(),295,230);
         addObject(new ContinueArrow(), 545,365);
         

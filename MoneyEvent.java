@@ -10,13 +10,14 @@ public class MoneyEvent extends Event
 {
     public MoneyEvent(int choice) {
         super("You invested in some sort of stock", 10.00, 0);
+        Income income = new Income();
         switch(choice){
             case 0:
-                setDescription("test" + "10.00$"); 
+                setDescription("You found money on the street\nBalance: +$10.00"); 
                 break;
             case 1:
-                setDescription("You got paid \nBalance: +$1523.67"); 
-                setEventMoney(1523.67);
+                setDescription("You got paid \nBalance: + " + String.valueOf(income.getIncome()*1.00));
+                setEventMoney(income.getIncome()*1.0);
                 setEventCredit(0);
                 break;
             case 2:
@@ -40,12 +41,12 @@ public class MoneyEvent extends Event
                 break;
             case 6:
                 setDescription("You had a medical expense\n Balance: -$400 "); 
-                setEventMoney(400);
+                setEventMoney(-400);
                 setEventCredit(0);
                 break;
             case 7:
-                setDescription("You missed work\n Balance: +$1200.98 "); 
-                setEventMoney(1200.98);
+                setDescription("You missed work\n Balance: - " + String.valueOf(income.getIncome()*.1)); 
+                setEventMoney(-income.getIncome()*.1);
                 setEventCredit(0);
                 break;
             case 8:
@@ -71,10 +72,10 @@ public class MoneyEvent extends Event
             case 12:
                 setDescription("You have not missed any payments\n Credit Score:+5 "); 
                 setEventMoney(0);
-                setEventCredit(15);
+                setEventCredit(5);
                 break;
             case 13:
-                setDescription("You made a lump sum payment on your loan\n Credit Score:+10 "); 
+                setDescription("You made a lump sum payment on your loan\n Credit Score:+40 "); 
                 setEventMoney(0);
                 setEventCredit(40);
                 break;
@@ -91,7 +92,7 @@ public class MoneyEvent extends Event
             case 16:
                 setDescription("You missed a car payment \n Credit Score:-30 "); 
                 setEventMoney(0);
-                setEventCredit(-20);
+                setEventCredit(-30);
                 break;
             case 17:
                 setDescription("You missed a credit card Payment \n Credit Score:-20 "); 
@@ -99,9 +100,120 @@ public class MoneyEvent extends Event
                 setEventCredit(-20);
                 break;
             case 18:
-                setDescription("You missed your rent payment \n Credit Score:-20 "); 
+                setDescription("You missed your rent payment \n Credit Score:-20  "); 
                 setEventMoney(0);
                 setEventCredit(-20);
+                break;
+            case 19:
+                setDescription("You received a tax refund\nBalance: +$800.00");
+                setEventMoney(800.00);
+                setEventCredit(50);
+                break;
+            case 20:
+                setDescription("You sold a valuable item online\nBalance: +$200.00");
+                setEventMoney(200.00);
+                setEventCredit(3);
+                break;
+            case 21:
+                setDescription("You invested in cryptocurrency\nBalance: -$50.00");
+                setEventMoney(-250.00);
+                setEventCredit(0);
+                break;
+            case 22:
+                setDescription("You won a small prize in a contest\nBalance: +$50.00");
+                setEventMoney(50.00);
+                setEventCredit(2);
+                break;
+            case 23:
+                setDescription("You donated to a charity\nBalance: -$20.00");
+                setEventMoney(-20.00);
+                setEventCredit(0);
+                break;
+            case 24:
+                setDescription("You received a gift from a friend\nBalance: +$30.00");
+                setEventMoney(30.00);
+                setEventCredit(1);
+                break;
+            case 25:
+                setDescription("You participated in a focus group\nBalance: +$75.00");
+                setEventMoney(75.00);
+                setEventCredit(0);
+                break;
+            case 26:
+                setDescription("You made a successful stock trade\nBalance: +$120.00");
+                setEventMoney(120.00);
+                setEventCredit(5);
+                break;
+            case 27:
+                setDescription("You purchased a new gadget\nBalance: -$200.00");
+                setEventMoney(-200.00);
+                setEventCredit(-2);
+                break;
+            case 28:
+                setDescription("You found money on the street\nBalance: +$10.00");
+                setEventMoney(10.00);
+                setEventCredit(1);
+                break;
+                //choice events
+            case 29:
+                setDescription("You can choose to pay off one of your\n biggest debts now or pay it later.\n What do you do?");
+                setEventMoney(0);
+                setEventCredit(0);
+                break;
+            case 37:
+                setDescription("You chose to pay off your debt now\n rather then later \n+ Credit Score: +50\n -$25000");
+                setEventMoney(-25000);
+                setEventCredit(50);
+                break;
+            case 34:
+                setDescription("You chose to save your current money.");
+                setEventMoney(0);
+                setEventCredit(0);
+                break;
+            case 30:
+                setDescription("You have the option to take a new job\n will you take it?");
+                setEventMoney(0);
+                setEventCredit(0);
+                break;
+            case 33:
+                setDescription("You chose not to take the job.");
+                setEventMoney(0);
+                setEventCredit(0);
+                break;
+            case 31:
+                setDescription("You found a financial advisor who offers \ninvestment advice.\nDo you want to consult the financial advisor?");
+                setEventMoney(0);
+                setEventCredit(0);
+                break;
+            case 35:
+                setDescription("You decided to consult the financial advisor. -$100.00\nCredit Score: +20");
+                setEventMoney(-100.00);
+                setEventCredit(20);
+                break;
+            case 36:
+                setDescription("You opted not to consult the financial advisor.");
+                setEventMoney(0);
+                setEventCredit(0);
+                break;
+            case 32:
+                setDescription("You have the opportunity to attend a financial literacy workshop.\nDo you want to attend?");
+                setEventMoney(0);
+                setEventCredit(0);
+                break;
+            case 38:
+                setDescription("You attended the financial literacy workshop.\nCredit Score: +15");
+                setEventMoney(0);
+                setEventCredit(15);
+                break;
+            case 39:
+                setDescription("You chose not to attend the financial literacy workshop.");
+                setEventMoney(0);
+                setEventCredit(0);
+                break;
+            case 40:
+                setDescription("You chose to take a new job, as a sign on bonus \n + $5000");
+                setEventMoney(5000);
+                setEventCredit(0);
                 break;
         }
     }
