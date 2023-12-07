@@ -44,8 +44,9 @@ public class StatScreen extends World
         PhoneScreen phone = new PhoneScreen();
         addObject(phone,310,195);
         StatScreenTitle statTitle = new StatScreenTitle();
+        addObject(statTitle,310,70);
         
-        //addObject(statTitle,310,70);
+        
         //addObject(bankAccount,350,140);
         //addObject(bankAccount(character.getMoney()),350,140);
         addObject(player.getBankAccount(),350,140);
