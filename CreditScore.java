@@ -21,7 +21,7 @@ public class CreditScore extends Actor
      */
     //creates credit score image with a value of 300
     public CreditScore(int scoreNumber){
-        setScoreNumber(300);
+        setScoreNumber(600);
         Font font = new Font(true, false, 20);
         creditscoreImage = new GreenfootImage(250, 50);
         creditscoreImage.setColor(getColor());
