@@ -101,21 +101,11 @@ public class MoneyEvent extends Event
                 setEventMoney(800.00);
                 setEventCredit(50);
                 break;
-            case 20:
-                setDescription("You sold a valuable item online\nBalance: +$200.00");
-                setEventMoney(200.00);
-                setEventCredit(3);
-                break;
             case 21:
                 setDescription("You invested in cryptocurrency\nBalance: -$50.00");
                 setEventMoney(-250.00);
                 setEventCredit(0);
                 break; 
-            case 22:
-                setDescription("You won a small prize in a contest\nBalance: +$50.00");
-                setEventMoney(50.00);
-                setEventCredit(2);
-                break;
             case 23:
                 setDescription("You donated to a charity\nBalance: -$20.00");
                 setEventMoney(-20.00);
@@ -125,12 +115,7 @@ public class MoneyEvent extends Event
                 setDescription("You received a gift from a friend\nBalance: +$30.00");
                 setEventMoney(30.00);
                 setEventCredit(1);
-                break;
-            case 25:
-                setDescription("You participated in a focus group\nBalance: +$75.00");
-                setEventMoney(75.00);
-                setEventCredit(0);
-                break;
+                break;  
             case 26:
                 setDescription("You made a successful stock trade\nBalance: +$120.00");
                 setEventMoney(120.00);
@@ -147,6 +132,9 @@ public class MoneyEvent extends Event
                 setEventCredit(20);
                 break;
                 //choice events
+                
+                
+                
             case 29:
                 setDescription("You can choose to pay off one of your\n biggest debts now or pay it later.\n What do you do?");
                 setEventMoney(0);
@@ -172,6 +160,9 @@ public class MoneyEvent extends Event
                 setEventMoney(0);
                 setEventCredit(0);
                 break;
+            
+                
+                
             case 31:
                 setDescription("You found a financial advisor who offers \ninvestment advice.\nDo you want to consult the financial advisor?");
                 setEventMoney(0);
@@ -187,6 +178,8 @@ public class MoneyEvent extends Event
                 setEventMoney(0);
                 setEventCredit(0);
                 break;
+                
+                
             case 32:
                 setDescription("You have the opportunity to attend a financial literacy workshop.\nDo you want to attend?");
                 setEventMoney(0);
@@ -202,11 +195,17 @@ public class MoneyEvent extends Event
                 setEventMoney(0);
                 setEventCredit(0);
                 break;
+                
+                
+                
             case 40:
                 setDescription("You chose to take a new job, as a sign on bonus \n + $5000");
                 setEventMoney(5000);
                 setEventCredit(0);
                 break;
+               
+                
+                
             case 0:
                 setDescription("You inherit money from a distant relative. \n Do you invest/save it or buy the new car?"); 
                 setEventMoney(10000);
@@ -291,6 +290,7 @@ public class MoneyEvent extends Event
                 setEventMoney(0);
                 setEventCredit(30);
                 break;
+                
         }
     }
 
