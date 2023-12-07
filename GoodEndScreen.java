@@ -35,8 +35,7 @@ public class GoodEndScreen extends EndScreen
         this.player = player;
         setBackground("images/Backgrounds/citypopup.png");
         addObject(new Congratulations(),300,35);
-        addObject(new GameSummary(player),300,100);
-        addObject(new GameAchievements(),295,230);
+        addObject(new GameSummary(player),300,200);
         addObject(new ContinueArrow(), 545,365);
         
         //balloons

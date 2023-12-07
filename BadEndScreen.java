@@ -17,10 +17,7 @@ public class BadEndScreen extends EndScreen
     {   
         this.player = player;
         addObject(new GameOver(),300,35);
-        addObject(new GameSummary(player),300,100);
-        if (true){//should be Character.getAchievements().size > 0 
-            addObject(new GameAchievements(),295,230);
-        }
+        addObject(new GameSummary(player),300,200);
         addObject(new ContinueArrow(), 545,365);
     }
 }
