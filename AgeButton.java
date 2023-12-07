@@ -15,22 +15,35 @@ public class AgeButton extends Actor {
  
     
     public AgeButton(Character player, GameScreen world) {
-        currentAge = player.getAge();
         this.player = player;
         this.world = world;
-        setImage(new GreenfootImage("+", 20, Color.BLACK, null));
+        setImage(new GreenfootImage("Age Increase/\nNew Scenario", 20, Color.BLACK, null));
         
 
         // Generate a random integer
         
     }
     
+    public void checkAgeEnding() {
+        if (player.getAge()+1 > 100) {
+            if (player.getBalance() >= 100000 || player.getCredit() > 400 ) {
+                 Greenfoot.setWorld(new GoodEndScreen(player));
+            } else {
+                Greenfoot.setWorld(new BadEndScreen(player));    
+            }
+        }
+    }
     public void act() {
         if (Greenfoot.mouseClicked(this)) {
-            int randomNumber = rand.nextInt(15);
-            player.setAge(currentAge + 1);
+            checkAgeEnding();
+            int randomNumber = rand.nextInt(32);
+            player.setAge(player.getAge() + 2);
+            world.removeTextOverlays();
             world.handleMoneyEvent(randomNumber);
-            world.displayEventHistory();
+            
         }
+    }
+    public void clearEvents(){
+       // Description.clear();
     }
 }
