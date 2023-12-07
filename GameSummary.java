@@ -21,12 +21,12 @@ public class GameSummary extends Actor
     public GameSummary(Character player){
         this.player = player;
         NameInput.loadName();
-        setImage(new GreenfootImage(NameInput.getName()+" ended with "+"$"+player.getBalance()+"\nand a credit score of "+player.getCredit(),24,Color.BLACK,new Color(0, 0, 0, 0)));
+        setImage(new GreenfootImage(NameInput.getName()+" ended with "+"$"+player.getBalance()+" \nand a credit score of "+player.getCredit(),24,Color.BLACK,new Color(0, 0, 0, 0)));
     }
     public GameSummary(){
         this.player = player;
         NameInput.loadName();
-        setImage(new GreenfootImage(NameInput.getName()+" ended with "+"$"+" and a credit score of ",24,Color.BLACK,new Color(0, 0, 0, 0)));
+        setImage(new GreenfootImage(NameInput.getName()+" ended with "+"$"+" \nand a credit score of ",24,Color.BLACK,new Color(0, 0, 0, 0)));
     }
     
 }

@@ -38,8 +38,9 @@ public class GameScreen extends World
         setBackground("images/Backgrounds/citypopup.png");
         addObject(new MenuIcon(),560,30);
         addObject(player, 590,30);
+        //addObject(new ContinueArrow(),545,365);
         addObject(new CharacterIcon(player, this),25,30);
-        addObject(new AgeButton(player, this), 500, 300);
+        addObject(new AgeButton(player, this), 500, 325);
         player.setMoney(income.getIncome()*1.00);
     }
 
@@ -87,6 +88,21 @@ public class GameScreen extends World
         }
         
         switch (eventnumber) {
+            case 0:
+                displayChoices(eventnumber);
+                break;
+            case 4:
+                displayChoices(eventnumber);
+                break;
+            case 20:
+                displayChoices(eventnumber);
+                break;
+            case 22:
+                displayChoices(eventnumber);
+                break;
+            case 25:
+                displayChoices(eventnumber);
+                break;    
             case 29:
                 displayChoices(eventnumber);
                 break;
@@ -107,12 +123,12 @@ public class GameScreen extends World
         addObject(MoneyEvent, 100, 100);
         
         // Add the event to the history list.
-        //displayEvent(Description);
+        displayEvent(Description);
         eventHistory.add(MoneyEvent);
 
         // Remove the Event from the world.
         removeObject(MoneyEvent);
-        displayEventHistory();
+        //displayEventHistory();
     }
 
     public void displayEvent(String eventDescription) {
@@ -140,19 +156,47 @@ public class GameScreen extends World
                 break;
             case 5:
                 handleMoneyEvent(35);
-    
                 break;
             case 6:
                 handleMoneyEvent(36);
                 break;
             case 7:
                 handleMoneyEvent(38);
-    
                 break;
             case 8:
                 handleMoneyEvent(39);
                 break;
-                // Add more cases for more events/choices 
+            case 9:
+                handleMoneyEvent(41);
+                break;
+            case 10:
+                handleMoneyEvent(42);
+                break;
+            case 11:
+                handleMoneyEvent(43);
+                break;
+            case 12:
+                handleMoneyEvent(44);
+                break;
+            case 13:
+                handleMoneyEvent(45);
+                break;
+            case 14:
+                handleMoneyEvent(46);
+                break;
+            case 15:
+                handleMoneyEvent(49);
+                break;
+            case 16:
+                handleMoneyEvent(50);
+                break;
+            case 19:
+                handleMoneyEvent(47);
+                break;
+            case 20:
+                handleMoneyEvent(48);
+                break;
+            // Add more cases for more events/choices 
         }
     }
 
@@ -162,7 +206,7 @@ public class GameScreen extends World
         choices.clear(); // Clear existing choices
 
         // Generate choices based on the event number
-        switch (eventNumber) {
+        switch (eventNumber){
             case 29:
                 choices.add(new Choice("Pay it", 1));
                 choices.add(new Choice("Not yet", 2));
@@ -179,13 +223,34 @@ public class GameScreen extends World
                 choices.add(new Choice("Attend", 7));
                 choices.add(new Choice("Stay home", 8));
                 break;
+                
+            case 0:
+                choices.add(new Choice("Invest/Save", 9));
+                choices.add(new Choice("Buy a New Car", 10));
+                break;
+            case 4:
+                choices.add(new Choice("Relocate", 11));
+                choices.add(new Choice("Stay", 12));
+                break;
+            case 20:
+                choices.add(new Choice("Use credit", 13));
+                choices.add(new Choice("Don't use credit", 14));
+                break;
+            case 22:
+                choices.add(new Choice("Get a loan", 15));
+                choices.add(new Choice("Wait/Find cheaper", 16));
+                break;
+            case 25:
+                choices.add(new Choice("Keep it", 19));
+                choices.add(new Choice("Sell it", 20));
+                break;
         }
 
         // Display the choices
         for (Choice choice : choices) {
             ChoiceButton choiceButton = new ChoiceButton(choice, this);
             addObject(choiceButton, x, y);
-            x += 100; // Change the value to adjust spacing
+            x += 120; // Change the value to adjust spacing
         }
     }
 
