@@ -17,7 +17,7 @@ public class AgeButton extends Actor {
     public AgeButton(Character player, GameScreen world) {
         this.player = player;
         this.world = world;
-        setImage(new GreenfootImage("Age Increase/\nNew Scenario", 20, Color.BLACK, null));
+        setImage(new GreenfootImage("Age ++/\nNew Scenario", 20, Color.BLACK, null));
         
 
         // Generate a random integer
@@ -39,10 +39,11 @@ public class AgeButton extends Actor {
             int randomNumber = rand.nextInt(32);
             player.setAge(player.getAge() + 1);
             world.removeTextOverlays();
+            world.removeChoiceButton();
             world.handleMoneyEvent(randomNumber);
         }
     }
     public void clearEvents(){
-       // Description.clear();
+        //Description.clear();
     }
 }

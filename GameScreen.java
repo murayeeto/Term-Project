@@ -123,12 +123,12 @@ public class GameScreen extends World
         addObject(MoneyEvent, 100, 100);
         
         // Add the event to the history list.
-        //displayEvent(Description);
+        displayEvent(Description);
         eventHistory.add(MoneyEvent);
 
         // Remove the Event from the world.
         removeObject(MoneyEvent);
-        displayEventHistory();
+        //displayEventHistory();
     }
 
     public void displayEvent(String eventDescription) {
@@ -206,6 +206,7 @@ public class GameScreen extends World
         choices.clear(); // Clear existing choices
 
         // Generate choices based on the event number
+        switch (eventNumber){
             case 29:
                 choices.add(new Choice("Pay it", 1));
                 choices.add(new Choice("Not yet", 2));
