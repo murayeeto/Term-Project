@@ -57,13 +57,13 @@ public class CreditScore extends Actor
     
     // method that returns a color based on the scoreNumber value
     private Color getColor(){
-        if (300<=scoreNumber && scoreNumber<=629){
+        if (scoreNumber <= 629){
             return Color.RED;    
         }
-        else if (630<=scoreNumber && scoreNumber<=689){
+        else if (scoreNumber >= 630 && scoreNumber<=689){
             return Color.ORANGE;
         }
-        else if (690<=scoreNumber && scoreNumber<=719){
+        else if (scoreNumber >= 690 && scoreNumber<=719){
             return Color.YELLOW;
         }
         return Color.GREEN;

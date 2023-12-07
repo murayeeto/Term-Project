@@ -65,5 +65,9 @@ public class Income extends Actor
         incomeImage.drawString("Income: \n    $"+ this.income, 0, 20);
         setImage(incomeImage);
     }
+    
+    public int getIncome(){
+        return income;
+    }
 }
 

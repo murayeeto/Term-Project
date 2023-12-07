@@ -10,12 +10,11 @@ public class Event extends Actor{
     private String Description;
     private double MoneyImpact;
     private int CreditImpact;
-
+    
     public Event(String Description, double MoneyImpact, int CreditImpact) {
         this.Description = Description;
         this.MoneyImpact = MoneyImpact;
         this.CreditImpact = CreditImpact;
-
     }
     
     public String getDescription(){
@@ -31,17 +30,25 @@ public class Event extends Actor{
         this.MoneyImpact = MoneyImpact;
     }
     
+    public double getEventMoney(){
+        return MoneyImpact;
+    }
+    
     public void setEventCredit(int CreditImpact){
         this.CreditImpact = CreditImpact;
     }
+    
+    public int getEventCredit(){
+        return CreditImpact;
+    }
 
     public void act() {
-        Character Player = ((GameScreen)getWorld()).getPlayer(); 
-        BankAccount bankaccount = Player.getBankAccount();
+        //BankAccount bankaccount = player.getBankAccount();
 
-        bankaccount.setBalance(Player.getBalance() + MoneyImpact);
-        Player.setCredit(Player.getCredit() + CreditImpact);
+        //bankaccount.setBalance(player.getBalance() + MoneyImpact);
+        //player.setCredit(player.getCredit() + CreditImpact);
         // You can put other specific stuff here like ifs and logic
+        System.out.println("event ran");
     }
 }
 

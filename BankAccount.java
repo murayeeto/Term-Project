@@ -38,9 +38,6 @@ public class BankAccount extends Actor
         setImage(bankaccountImage);
     }
 
-    public static void setBalance(int amount){
-        balance = amount;
-    }
     
     // updates bank account image
     public void act()
@@ -78,6 +75,10 @@ public class BankAccount extends Actor
         return balance;
     }
     public void setBalance(double balance){
+        this.balance = balance;
+    }
+    
+    public void setBalance(int balance){
         this.balance = balance;
     }
     
