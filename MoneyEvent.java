@@ -101,11 +101,21 @@ public class MoneyEvent extends Event
                 setEventMoney(800.00);
                 setEventCredit(50);
                 break;
+            case 20:
+                setDescription("You sold a valuable item online\nBalance: +$200.00");
+                setEventMoney(200.00);
+                setEventCredit(3);
+                break;
             case 21:
                 setDescription("You invested in cryptocurrency\nBalance: -$50.00");
                 setEventMoney(-250.00);
                 setEventCredit(0);
                 break; 
+            case 22:
+                setDescription("You won a small prize in a contest\nBalance: +$50.00");
+                setEventMoney(50.00);
+                setEventCredit(2);
+                break;
             case 23:
                 setDescription("You donated to a charity\nBalance: -$20.00");
                 setEventMoney(-20.00);
@@ -115,7 +125,12 @@ public class MoneyEvent extends Event
                 setDescription("You received a gift from a friend\nBalance: +$30.00");
                 setEventMoney(30.00);
                 setEventCredit(1);
-                break;  
+                break;
+            case 25:
+                setDescription("You participated in a focus group\nBalance: +$75.00");
+                setEventMoney(75.00);
+                setEventCredit(0);
+                break;
             case 26:
                 setDescription("You made a successful stock trade\nBalance: +$120.00");
                 setEventMoney(120.00);
@@ -132,9 +147,6 @@ public class MoneyEvent extends Event
                 setEventCredit(20);
                 break;
                 //choice events
-                
-                
-                
             case 29:
                 setDescription("You can choose to pay off one of your\n biggest debts now or pay it later.\n What do you do?");
                 setEventMoney(0);
@@ -145,7 +157,7 @@ public class MoneyEvent extends Event
                 setEventMoney(-25000);
                 setEventCredit(50);
                 break;
-            case 34:
+            case 55:
                 setDescription("You chose to save your current money.");
                 setEventMoney(0);
                 setEventCredit(0);
@@ -155,31 +167,26 @@ public class MoneyEvent extends Event
                 setEventMoney(0);
                 setEventCredit(0);
                 break;
-            case 33:
+            case 46:
                 setDescription("You chose not to take the job.");
                 setEventMoney(0);
                 setEventCredit(0);
                 break;
-            
-                
-                
             case 31:
                 setDescription("You found a financial advisor who offers \ninvestment advice.\nDo you want to consult the financial advisor?");
                 setEventMoney(0);
                 setEventCredit(0);
                 break;
-            case 35:
+            case 36:
                 setDescription("You decided to consult the financial advisor. -$100.00\nCredit Score: +20");
                 setEventMoney(-100.00);
                 setEventCredit(20);
                 break;
-            case 36:
+            case 43:
                 setDescription("You opted not to consult the financial advisor.");
                 setEventMoney(0);
                 setEventCredit(0);
                 break;
-                
-                
             case 32:
                 setDescription("You have the opportunity to attend a financial literacy workshop.\nDo you want to attend?");
                 setEventMoney(0);
@@ -195,18 +202,12 @@ public class MoneyEvent extends Event
                 setEventMoney(0);
                 setEventCredit(0);
                 break;
-                
-                
-                
             case 40:
                 setDescription("You chose to take a new job, as a sign on bonus \n + $5000");
                 setEventMoney(5000);
                 setEventCredit(0);
                 break;
-               
-                
-                
-            case 0:
+            case 34:
                 setDescription("You inherit money from a distant relative. \n Do you invest/save it or buy the new car?"); 
                 setEventMoney(10000);
                 break;
@@ -222,7 +223,7 @@ public class MoneyEvent extends Event
                 break;
                 
                 
-            case 43:
+            case 35:
                 setDescription("You receive a job offer with a higher salary,\n but it's in a more expensive city. \nShould you relocate and or stay where you are?"); 
                 setEventMoney(-2000);
                 setEventCredit(0);
@@ -239,7 +240,7 @@ public class MoneyEvent extends Event
                 break;
               
                 
-            case 46:
+            case 33:
                 setDescription("You want to buy Christmas Gifts.\n You could use credit, but you can't pay it off.\n Should you buy the gifts and use credit?");
                 setEventMoney(0);
                 setEventCredit(-10);
@@ -255,41 +256,6 @@ public class MoneyEvent extends Event
                 setEventCredit(10);
                 break;
             
-                
-                
-            case 49:
-                setDescription("Your relative bought you stocks as a birthday gift. \nShould you keep the stock or sell it?");
-                setEventMoney(0);
-                setEventCredit(0);
-                break;    
-            case 50:
-                setDescription("You chose to keep the stocks and made \nmore money in the long run! \n + $3000");
-                setEventMoney(3000);
-                setEventCredit(10);
-                break;
-            case 51:
-                setDescription("You chose to sell the stocks, \nand missed a giant value increase. \n - $1500");
-                setEventMoney(-1500);
-                setEventCredit(10);
-                break;
-            
-                
-                
-            case 52:
-                setDescription("You want to buy your dream car, but you're broke.\n Should you take out a loan \nor wait until you have enough cash?");
-                setEventMoney(0);
-                setEventCredit(0);
-                break;
-            case 53:
-                setDescription("You chose to take out a loan, and \nare struggling to pay it back. \n - 30");
-                setEventMoney(0);
-                setEventCredit(-30);
-                break;
-            case 54:
-                setDescription("You chose to wait/find a cheaper car! \n + 30");
-                setEventMoney(0);
-                setEventCredit(30);
-                break;
                 
         }
     }

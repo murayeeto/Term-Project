@@ -27,18 +27,26 @@ public class GameScreen extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         player = new Character();
-            /**
+        /**
         try{
-            comm = new ProjectComm("minecrafters");
+        comm = new ProjectComm("minecrafters");
         } catch (IOException ioe){
-            System.out.println(ioe);
+        System.out.println(ioe);
         }
-             */
+         */
+
         income = new Income();
         setBackground("images/Backgrounds/citypopup.png");
         addObject(new MenuIcon(),560,30);
         addObject(player, 590,30);
         //addObject(new ContinueArrow(),545,365);
+        /**
+        try{
+        System.out.println(comm.sendCommand("-80"));
+        } catch (IOException ioe){
+        System.out.println(ioe);
+        }
+         */
         addObject(new CharacterIcon(player, this),25,30);
         addObject(new AgeButton(player, this), 500, 325);
         player.setMoney(income.getIncome()*1.00);
@@ -49,13 +57,13 @@ public class GameScreen extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         this.player = player;
-          /**
+        /**
         try{
-            comm = new ProjectComm("minecrafters");
+        comm = new ProjectComm("minecrafters");
         } catch (IOException ioe){
-            System.out.println(ioe);
+        System.out.println(ioe);
         }
-             */
+         */
         setBackground("images/Backgrounds/citypopup.png");
         addObject(new MenuIcon(),560,30);
         addObject(player, 590,30);
@@ -69,40 +77,26 @@ public class GameScreen extends World
         BankAccount bankaccount = player.getBankAccount();
         bankaccount.setBalance(MoneyEvent.getEventMoney() + player.getBalance());
         player.setCredit(player.getCredit() + MoneyEvent.getEventCredit());
-            /**
+        /**
         try{
-            if (mapScoreToAngle(player.getCredit()) > 90.0){
-                 System.out.println(comm.sendCommand(String.valueOf(mapScoreToAngle(90.0))));
-            } else if (mapScoreToAngle(player.getCredit()) < -90.0){
-                System.out.println(comm.sendCommand(String.valueOf(mapScoreToAngle(-90.0))));
-            } else {
-                System.out.println(comm.sendCommand(String.valueOf(mapScoreToAngle(player.getCredit()))));
-            }
+        if (mapScoreToAngle(player.getCredit())-75 > 90.0){
+        System.out.println(comm.sendCommand(String.valueOf(mapScoreToAngle(90.0))));
+        } else if (mapScoreToAngle(player.getCredit())-75 < -90.0){
+        System.out.println(comm.sendCommand(String.valueOf(mapScoreToAngle(-90.0))));
+        } else {
+        System.out.println(comm.sendCommand(String.valueOf(mapScoreToAngle(player.getCredit())-75)));
+        }
 
         } catch (IOException ioe){
-            System.out.println(ioe);
+        System.out.println(ioe);
         }
-             */
+         */
+
         if (eventnumber == 40){
             income.setIncome(income.getIncome()+5000);
         }
-        
-        switch (eventnumber) {
-            case 0:
-                displayChoices(eventnumber);
-                break;
-            case 4:
-                displayChoices(eventnumber);
-                break;
-            case 20:
-                displayChoices(eventnumber);
-                break;
-            case 22:
-                displayChoices(eventnumber);
-                break;
-            case 25:
-                displayChoices(eventnumber);
-                break;    
+
+        switch (eventnumber) {  
             case 29:
                 displayChoices(eventnumber);
                 break;
@@ -115,13 +109,22 @@ public class GameScreen extends World
             case 32:
                 displayChoices(eventnumber);
                 break;
+            case 33:
+                displayChoices(eventnumber);
+                break;
+            case 34:
+                displayChoices(eventnumber);
+                break;
+            case 35:
+                displayChoices(eventnumber);
+                break;
                 // Add more cases for more events/choices 
         }
 
         String Description = MoneyEvent.getDescription();
         // Add the Event to the world
         addObject(MoneyEvent, 100, 100);
-        
+
         // Add the event to the history list.
         displayEvent(Description);
         eventHistory.add(MoneyEvent);
@@ -146,19 +149,19 @@ public class GameScreen extends World
                 handleMoneyEvent(37);
                 break;
             case 2:
-                handleMoneyEvent(34);
+                handleMoneyEvent(55);
                 break;
             case 3:
                 handleMoneyEvent(40);
                 break;
             case 4:
-                handleMoneyEvent(33);
+                handleMoneyEvent(46);
                 break;
             case 5:
-                handleMoneyEvent(35);
+                handleMoneyEvent(36);
                 break;
             case 6:
-                handleMoneyEvent(36);
+                handleMoneyEvent(43);
                 break;
             case 7:
                 handleMoneyEvent(38);
@@ -173,30 +176,18 @@ public class GameScreen extends World
                 handleMoneyEvent(42);
                 break;
             case 11:
-                handleMoneyEvent(43);
-                break;
-            case 12:
                 handleMoneyEvent(44);
                 break;
-            case 13:
+            case 12:
                 handleMoneyEvent(45);
                 break;
-            case 14:
-                handleMoneyEvent(46);
-                break;
-            case 15:
-                handleMoneyEvent(49);
-                break;
-            case 16:
-                handleMoneyEvent(50);
-                break;
-            case 19:
+            case 13:
                 handleMoneyEvent(47);
                 break;
-            case 20:
+            case 14:
                 handleMoneyEvent(48);
                 break;
-            // Add more cases for more events/choices 
+                // Add more cases for more events/choices 
         }
     }
 
@@ -223,26 +214,17 @@ public class GameScreen extends World
                 choices.add(new Choice("Attend", 7));
                 choices.add(new Choice("Stay home", 8));
                 break;
-                
-            case 0:
+            case 34:
                 choices.add(new Choice("Invest/Save", 9));
                 choices.add(new Choice("Buy a New Car", 10));
                 break;
-            case 4:
+            case 35:
                 choices.add(new Choice("Relocate", 11));
                 choices.add(new Choice("Stay", 12));
                 break;
-            case 20:
+            case 33:
                 choices.add(new Choice("Use credit", 13));
                 choices.add(new Choice("Don't use credit", 14));
-                break;
-            case 22:
-                choices.add(new Choice("Get a loan", 15));
-                choices.add(new Choice("Wait/Find cheaper", 16));
-                break;
-            case 25:
-                choices.add(new Choice("Keep it", 19));
-                choices.add(new Choice("Sell it", 20));
                 break;
         }
 
@@ -277,7 +259,6 @@ public class GameScreen extends World
     public void displayEventHistory() {
         int y = getHeight() / 2 - 30 * Math.min(eventHistory.size(), 2);
 
-
         List<TextOverlay> textOverlays = new ArrayList<>();
         for (int i = Math.max(0, eventHistory.size() - 2); i < eventHistory.size(); i++) {
             Event event = eventHistory.get(i);
@@ -288,11 +269,10 @@ public class GameScreen extends World
             y += 50; // Spacing Adjuster
         }
 
-
         Greenfoot.delay(150);
         //removeObjects(textOverlays);
     }
-    
+
     //getter for the player
     public Character getPlayer() {
         List<Character> Player = getObjects(Character.class);
@@ -303,30 +283,30 @@ public class GameScreen extends World
             return null;
         }
     }
-    
+
     //remover methods for all the events/choices because its insanely quicker to do that here
     public void removeTextOverlays() {
         List<TextOverlay> textOverlays = getObjects(TextOverlay.class);
         removeObjects(textOverlays);
     }
-    
+
     public void removeChoiceButton() {
-            List<ChoiceButton> choiceButtons = getObjects(ChoiceButton.class);
-            removeObjects(choiceButtons);
+        List<ChoiceButton> choiceButtons = getObjects(ChoiceButton.class);
+        removeObjects(choiceButtons);
     }
-    
+
     //artifact stuff
     private static double mapScoreToAngle(double score) {
-            double minScore = 300;
-            double maxScore = 850;
-            double minAngle = -90;
-            double maxAngle = 90;
-    
-            double slope = (maxAngle - minAngle) / (maxScore - minScore);
-            double intercept = minAngle - slope * minScore;
-            double mappedAngle = slope * score + intercept;
-    
-            return mappedAngle;
+        double minScore = 300;
+        double maxScore = 850;
+        double minAngle = -90;
+        double maxAngle = 90;
+
+        double slope = (maxAngle - minAngle) / (maxScore - minScore);
+        double intercept = minAngle - slope * minScore;
+        double mappedAngle = slope * score + intercept;
+
+        return mappedAngle;
     }
 }
 
